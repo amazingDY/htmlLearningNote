@@ -4,11 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Css学习笔记1</title>
+    <!-- 引用CSS样式表 -->
+    <link rel="stylesheet" href="../css/cssDemo1.css">
+    <!-- 内部样式 -->
+    <style>
+        .title2 {
+            color: aqua;
+            font-size: 20px;
+        }
+
+        p {
+            color: aqua;
+            font-size: 30px;
+        }
+    </style>
 </head>
 
 <body>
-
+    <h1>css层叠样式表</h1>
+    <h2 style="color: blue;">这是行内样式,也叫内联样式,直接写在标签中</h2>
+    <h2 class="title2">这是内部样式,写在style标签中,在标签中写CSS</h2>
+    <p>style标签可写在head或body标签中,标准写法是写在head中</p>
+    <h2 class="title3">这是外部样式,写在一个CSS文件中,在head中用link标签引用</h2>
+    <h2 class="title3">外部样式的优点是样式可复用,文件结构清晰,能触发浏览器的缓存机制</h2>
+    <hr>
+    <h1>样式表的优先级</h1>
+    <p style="color: red;">内联样式>内部样式=外部样式</p>
+    <p style="font-size: 20px;">当然,针对的仅仅是同名的样式</p>
+    <p>内部样式和外部样式的优先级取决于先后,后写的优先级高</p>
+    <p>体现在style标签和link标签的先后</p>
 </body>
 
 </html>
