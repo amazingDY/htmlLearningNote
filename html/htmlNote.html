@@ -5,20 +5,40 @@
 
 <head>
     <!-- meta标签：无法由其它html元素所表示的元数据信息 -->
-    <meta charset="UTF-8">
     <!-- 设置解码格式 -->
+    <meta charset="UTF-8">
+    <!-- Compatible:兼容的  -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-widthinitial-scale=1.0">
+    <!-- 移动端兼容性 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 以下配置为seo做的工作 -->
+    <!-- 配置网页的关键字 -->
+    <meta name="keywords" content="网络购物,电商购物,化妆品,手机,电脑">
+    <!-- 配置网页的描述信息 -->
+    <meta name="description" content="用于个人学习HTML的网站">
+    <!-- 针对搜索引擎的爬虫设置 -->
+    <!-- 详细配置见笔记 -->
+    <meta name="robots" content="index">
+    <!-- 配置网页作者 -->
+    <meta name="author" content="amazingDY">
+    <!-- 配置网页生成工具 -->
+    <!-- <meta name="generator" content="Visual Studio Code"> -->
+    <!-- 配置网页版权信息 -->
+    <meta name="copyright" content="2024-2034&copy;版权所有">
+    <!-- 配置网页自动刷新 -->
+    <!-- <meta http-equiv="refresh" content="10;url=http://www.baidu.com"> -->
     <title>这是网页的标题</title>
 </head>
 
 <body>
+    <a id="html"></a>
     <!-- 标题标签，数字表示第x级标签，从1到6 -->
     <h1>这是一级标题标签h1</h1>
     <hr>
     <p>水平线标签hr</p>
     <p>换行标签br<br>换行标签br</p>
     <hr>
+    <h2>文本标签</h2>
     <p>这是一个段落标签p，过长会自动换行，其中不能再嵌套其他元素</p>
     <div>
         <p>用型的流内容容器div</p>
@@ -27,7 +47,6 @@
     <p>不常用的文本标签，详见文件
         <a href="../代码/1_HTML4/14_HTML_不常用的文本标签.html">../代码/14-不常用的文本标签.html</a>
     </p>
-    <h2>这是二级标题标签h2</h2>
     <strong>加粗标签strong</strong>
     <b>加粗标签b</b><br>
     <ins>下划线标签ins</ins>
@@ -43,6 +62,7 @@
         水的化学方程式是sub标签：H<sub>2</sub>O，8的三次方是这么写的sup标签：8<sup>3</sup>
     </p>
     <hr>
+    <h2>图片音视频标签</h2>
     <p>图片标签img</p>
     <!-- alt:意外文本，当图片不显示时显示alt中的内容 -->
     <!-- title:鼠标悬停时显示的内容 -->
@@ -55,6 +75,209 @@
     <audio src="../data/Die For You.mp3" controls></audio>
     <p>视频标签video</p>
     <video src="../data/video.mp4" controls width="400"></video>
+    <hr>
+    <h2>超链接</h2>
+    <!-- target:在当前页面'_self'/新页面'_blank'打开链接 -->
+    <p>利用a标签的href属性制作超链接</p>
+    <div>链接网站 <a target="_blank" href="https://www.bilibili.com/">blibli</a></div>
+    <div>链接文件 <a target="_blank" href="../data/谭松韵2.png">谭松韵</a></div>
+    <div>下载文件download属性 <a href="../data/谭松韵3.png" download="谭松韵.png">美女照片</a></div>
+    <!-- 锚点格式：<a name="锚点名字"></a> 或者 <标签 id="锚点名字"></标签>(更推荐,因为id可作用于其他的标签)-->
+    <!-- 超链接跳转锚点要在名字前加井号 -->
+    <div>跳转锚点,锚点设置在顶部,实现了返回顶部的功能 <a href="#html">去锚点</a></div>
+    <div>返回顶部,#后留空 <a href="#">返回顶部</a></div>
+    <div>刷新页面,href留空 <a href="">刷新页面</a></div>
+    <!-- 甚至可以跳转到另外页面的锚点:<a href="../webname.html#html">点击跳转</a> -->
+    <div>还可以执行js脚本 <a href="javascript:alert(666);">点击弹窗</a></div>
+    <!-- 用手机打开体验更佳 -->
+    <div>唤醒其他应用 <a href="tel:10086">电话联系</a></div>
+    <div>唤醒其他应用 <a href="mailto:1526386823@qq.com">打开邮件</a></div>
+    <div>唤醒其他应用 <a href="sms:10086">发送短信</a></div>
+    <hr>
+    <h2>列表</h2>
+    <!-- 列表的子元素最好统一 -->
+    <!-- li最好不要单独使用 -->
+    <p>有序列表ol,列表项li</p>
+    <ol>
+        <li>窗前明月光</li>
+        <li>疑似地上霜</li>
+        <li>举头望明月</li>
+        <li>低头思故乡</li>
+    </ol>
+    <p>无序列表ul</p>
+    <ul>
+        <li>干饭</li>
+        <li>睡觉</li>
+        <li>打游戏</li>
+    </ul>
+    <p>自定义列表dl,列表项dt,dd</p>
+    <dl>
+        <dt>做好笔记</dt>
+        <dd>笔记用于以后复习</dd>
+        <dt>多敲代码</dt>
+        <dd>孰能生巧,多敲代码才能快速提升</dd>
+        <dd>不敲代码跟咸鱼有啥区别</dd>
+    </dl>
+    <hr>
+    <h2>表格</h2>
+    <p>table标签</p>
+    <!-- height:最小高度,而不是一直都是这个高度 cellspacing:单元格间距 -->
+    <table border="1px" width="400px" height="400px" cellspacing="0">
+        <caption>表格标题caption</caption>
+        <!-- align:水平对齐left center right valign:垂直对齐top middle/center buttom -->
+        <thead height="60px" align="center" valign="center">
+            <tr>
+                <th>表格</th>
+                <th>头部thead</th>
+                <th colspan="2">行tr</th>
+                <th>表头内容th</th>
+            </tr>
+        </thead>
+        <tbody align="center" valign="middle">
+            <!-- rowspan:指定要跨的行数 colspan:指定要跨越的列数  -->
+            <tr>
+                <td>表格</td>
+                <td>内容tbody</td>
+                <td>行tr</td>
+                <td>内容td</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td rowspan="2">21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <!-- <td>31</td> -->
+                <td>32</td>
+                <td>33</td>
+                <td>34</td>
+                <td>35</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>脚注tfoot</td>
+            </tr>
+        </tfoot>
+    </table>
+    <hr>
+    <h2>表单</h2>
+    <p>表单标签form</p>
+    <!-- action:指定表单提交的位置 -->
+    <form action="https://www.baidu.com/s">
+        <!-- name:指定的属性,百度定义为wd,所以这里写wd -->
+        <input type="text" name="wd" id="">
+        <button>百度搜索</button>
+    </form>
+    <form action="https://search.jd.com/search">
+        <!-- name:指定的属性,百度定义为wd,所以这里写wd -->
+        <input type="text" name="keyword" id="">
+        <button>京东搜索</button>
+    </form>
+    <hr>
+    <p>表单中各种控件</p>
+    <!-- feildset用于将表单控件分类,legend用于表示分类标题 -->
+    <form action="">
+        <fieldset>
+            <legend>用户注册</legend>
+            <!-- value:输入框默认值 -->
+            <label for="account">账户:</label>
+            <input disabled id="account" type="text" name="account" placeholder="请输入账号" maxlength="11"><br>
+            <label>密码:
+                <input id="password" type="password" name="password" placeholder="请输入密码" maxlength="20"><br>
+            </label>
+            <!-- 单选框 -->
+            性别:
+            <input id="man" type="radio" name="gender" value="male" checked>
+            <label for="man">男</label>
+            <label for="woman">
+                <input id="woman" type="radio" name="gender" value="female">
+                女
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>次要信息</legend>
+            <!-- 复选框 -->
+            爱好:
+            <input type="checkbox" name="hobby" value="smoke" checked>抽烟
+            <input type="checkbox" name="hobby" value="drink">喝酒
+            <input type="checkbox" name="hobby" value="perm">烫头<br>
+            <!-- 文本域 -->
+            其他:
+            <textarea name="other" cols="21" rows="3"></textarea><br>
+            籍贯:
+            <select name="place">
+                <option value="beijing">北京</option>
+                <option value="shanghai">上海</option>
+                <option value="anhui" selected>安徽</option>
+            </select>
+        </fieldset>
+        <!-- 隐藏域:防止非法请求 -->
+        <input type="hidden" name="tag" value="value">
+        <!-- 提交按钮,两种写法 -->
+        <!-- button在表单中默认的类型就是submit -->
+        <button type="submit">确认</button>
+        <input type="submit" value="确认">
+        <!-- 重置按钮 -->
+        <button type="reset">重置</button>
+        <input type="reset">
+        <br>
+        <!-- 普通按钮 -->
+        <button type="button">检测账户是否被注册</button>
+    </form>
+    <hr>
+    <h2>其他标签</h2>
+    <p>按原文显示标签pre,保留空格等,用于展示代码</p>
+    <div>
+        <pre>
+            I  Love  You
+              I    Love
+                You
+        </pre>
+    </div>
+    <p>框架标签iframe</p>
+    <!-- 利用iframe嵌入一个普通的页面,frameborder只有0或者1,表示不显示/显示边框 -->
+    <!-- 这个标签可以用于嵌入广告 -->
+    <iframe src="https://www.csdn.net/" frameborder="1" width="70%" height="300"></iframe><br>
+    <!-- 可以与超链接配合,在框架中打开链接 -->
+    <a href="https://www.taobao.com" target="frame1">点击在框架中打开淘宝</a>
+    <a href="https://www.csdn.net" target="frame1">点击在框架中打开csdn</a><br>
+    <iframe name="frame1" width="70%" height="300"></iframe>
+    <!-- 可以与表单配合,让提交结果展示在框架中 -->
+    <form action="https://so.toutiao.com/search" target="frame1">
+        <input type="text" placeholder="在框架中打开搜索结果" name="keyword">
+        <input type="submit" value="搜索">
+    </form>
+    <hr>
+    <h2>html实体标签</h2>
+    <pre>
+        描述    实体名称        实体编号("&***;")
+                空格            &amp;nbsp; &amp;#160;
+        <       小于号          &amp;lt; &amp;#60;
+        >       大于号          &amp;gt; &amp;#62;
+        &       和号            &amp;amp; &amp;#38;
+        "       引号            &amp;quot; &amp;#34;
+        ́        反引号          &amp;acute; &amp;#180;
+        ￠      分（cent）      &amp;cent; &amp;#162;
+        £       镑（pound）     &amp;pound; &amp;#163;
+        ¥       元（yen）       &amp;yen; &amp;#165;
+        €       欧元（euro）    &amp;euro; &amp;#8364;
+        ©       版权（copyright）&amp;copy; &amp;#169;
+        ®       注册商标        &amp;reg; &amp;#174;
+        ™       商标            &amp;trade; &amp;#8482;
+        ×       乘号            &amp;times &amp;#215;
+        ÷       除号            &amp;divide; &amp;#247
+    </pre>
+    <h2>html全局属性(常用)</h2>
+    <p>id,class,style,title:给标签设置提示文本,lang:给标签设置语言</p>
+    <img src="../data/谭松韵2.png" alt="用来把网页顶上去" width="400">
 </body>
 
 </html>
