@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记2——CSS复合选择器</title>
+    <style>
+        /* 交集选择器 */
+        .newColor {
+            color: aqua;
+        }
+
+        p.newColor {
+            color: aquamarine;
+        }
+
+        p.newColor#myId {
+            color: blanchedalmond;
+        }
+
+        /* 并集选择器 */
+        .first,
+        .second,
+        #firstId {
+            color: rgb(255, 115, 0);
+            font-size: large;
+            background-color: antiquewhite;
+        }
+
+        /* 后代选择器 */
+        ul li {
+            color: red;
+        }
+
+        ul li a {
+            color: red;
+        }
+
+        .female li {
+            color: blue;
+        }
+
+        .female li.youngest {
+            color: pink;
+        }
+
+        /* 子代选择器 */
+        div>a {
+            color: brown;
+        }
+
+        div>p>a {
+            color: blueviolet;
+        }
+
+        /* 兄弟选择器 */
+        .bigBro+.secondBro {
+            color: burlywood;
+        }
+
+        /* 属性选择器 */
+        /* 选中具有某一属性的元素 */
+        [title] {
+            font-size: large;
+        }
+
+        /* 选择某一属性为某值的元素 */
+        [title="attributeSelecter2"] {
+            color: aqua;
+        }
+
+        /* 选择某一属性以某一字母开头的元素 */
+        [title^="b"] {
+            color: aquamarine;
+        }
+
+        /* 选择某一属性以某一字符结尾的元素 */
+        [title$="5"] {
+            color: blueviolet;
+        }
+
+        /* 选择某一属性中包含某一字符的元素 */
+        [title*="7"] {
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>复合选择器：交集选择器，并集选择器，后代选择器，子元素选择器</h1>
+    <hr>
+    <h2>交集选择器 第一个第二个第三个...{}</h2>
+    <h3 class="newColor">这里是newColor类的标题标签</h3>
+    <p class="newColor">这里是newColor类的段落标签</p>
+    <p id="myId" class="newColor">这是newColor类且id为myId的段落标签</p>
+    <p>交集选择器选择同时符合多个条件的元素</p>
+    <hr>
+    <h2>并集选择器 第一个，第二个，...{}</h2>
+    <p class="first">第一个类</p>
+    <p class="second">第二个类</p>
+    <p id="firstId">这是带id的p</p>
+    <p>并集选择器用于选择多个选择器对应的元素，可用于缩小样式表的体积</p>
+    <hr>
+    <h2>后代选择器 祖先 空格 后代{}</h2>
+    <p>注意后代结构必须符合正规的html语法要求</p>
+    <ul>
+        <li>大儿子</li>
+        <li>二儿子</li>
+        <li>
+            <a href="#">小儿子</a>
+        </li>
+    </ul>
+    <ul class="female">
+        <li>大女儿</li>
+        <li>二女儿</li>
+        <li class="youngest">小女儿</li>
+    </ul>
+    <hr>
+    <h2>子代选择器 父亲>儿子 </h2>
+    <div>
+        <a href="#">张三</a>
+        <a href="#">李四</a>
+        <p>
+            <a href="#">王五</a>
+        </p>
+    </div>
+    <p>子代选择器的作用是选择指定元素中符合条件的儿子元素</p>
+    <hr>
+    <h2>兄弟选择器 第一个兄弟+第二个兄弟</h2>
+    <p>选择的是相邻的第一个兄弟</p>
+    <div>
+        <p class="bigBro">大哥</p>
+        <p class="secondBro">二哥</p>
+        <p class="secondBro">二哥（克隆体）</p>
+        <p class="littleBro">三弟</p>
+    </div>
+    <hr>
+    <h2>属性选择器</h2>
+    <div title="attributeSelecter">属性1</div>
+    <div title="attributeSelecter2">属性2</div>
+    <div title="battributeSelecter3">属性3</div>
+    <div title="bselecter4">属性4</div>
+    <div title="cselecter5">属性5</div>
+    <div title="dselecter5">属性6</div>
+    <div title="dselecter7">属性7</div>
+    <div title="dselecter7">属性8</div>
+</body>
+
+</html>

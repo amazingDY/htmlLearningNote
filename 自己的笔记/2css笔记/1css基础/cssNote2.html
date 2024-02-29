@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记2——CSS基本选择器</title>
+    <style>
+        /* 通配选择器 */
+        * {
+            color: pink;
+        }
+
+        /* 元素选择器 */
+        p {
+            font-size: 20px;
+        }
+
+        /* 类选择器 */
+        .classSelecter {
+            background-color: rgb(68, 133, 255);
+        }
+
+        /* id选择器 */
+        #idSelecter {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>基本选择器：通配选择器、元素选择器、类选择器、id选择器</h1>
+    <hr>
+    <h2>本页面中的字体颜色就是通配选择器设定的*{color: pink;}</h2>
+    <p>通配选择器常用来清除一些不好处理的样式</p>
+    <hr>
+    <h2>下面这是元素选择器p{font-size:20px}</h2>
+    <p>元素选择器为某种元素设置某一样式，但不能差异化设置</p>
+    <hr>
+    <h2>这是类选择器 .classselecter{background-color: chartreuse;}</h2>
+    <p class="classSelecter">元素选择器用于为某一类控件设置特定样式（同一页面的输入框、相似作用的按钮等）</p>
+    <p class="classSelecter">值得注意的是，一个元素只能写一个class属性，若属于两个类，则写成 class="class1 class2"</p>
+    <hr>
+    <h2>ID选择器 #idSelecter{color: black}</h2>
+    <p id="idSelecter">id选择器用于为某一元素设置样式，因为id无法重复</p>
+</body>
+
+</html>
