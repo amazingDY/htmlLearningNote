@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记4——伪元素选择器</title>
+    <style>
+        /* 为元素选择器：选中元素中的一些位置 */
+        /* 选中div中第一个字母 */
+        div::first-letter {
+            color: red;
+            font-size: 40px;
+        }
+
+        /* 选中div中第一行文字 */
+        div::first-line {
+            background-color: yellow;
+        }
+
+        /* 选中div中被选择的文字 */
+        div::selection {
+            background-color: green;
+            color: orange;
+        }
+
+        /* 选中input中的提示文字 */
+        input::placeholder {
+            color: blue;
+        }
+
+        /* 选中p元素前、后位置，然后进行操作 */
+        p::before {
+            content: "￥";
+        }
+
+        p::after {
+            content: ".00";
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 输入lorem加一个数字，则可生成对应数量的单词 -->
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, tenetur! Neque error accusamus inventore est
+        amet, et nisi? Voluptates porro tempore sit libero rem, aut excepturi quaerat et? Ut sapiente repellendus
+        perferendis magnam libero dolores sunt soluta iure cumque rerum est optio qui id, illo fuga cum, iste, tenetur
+        dolorem.</div>
+    <div>DongYu</div>
+    <input type="text" placeholder="请输入用户名">
+    <p>199</p>
+    <p>299</p>
+    <p>399</p>
+    <p>499</p>
+</body>
+
+</html>

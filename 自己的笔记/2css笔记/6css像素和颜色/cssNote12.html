@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记6——颜色</title>
+    <style>
+        .hfut1 {
+            color: yellow;
+            background-color: rgb(0, 132, 255);
+        }
+
+        .hfut2 {
+            background-color: rgb(0, 130, 255);
+        }
+
+        .hfut3 {
+            background-color: rgba(0, 130, 255, 0.5);
+        }
+
+        .hfut4 {
+            background-color: #009dff;
+        }
+
+        .hfut5 {
+            background-color: #009dff5f;
+        }
+
+        .hfut6 {
+            background-color: hsl(200deg, 90%, 65%);
+        }
+
+        .hfut7 {
+            background-color: hsla(200deg, 90%, 65%, 50%);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>页面中的颜色可用：颜色名，rgb/rgba，HEX/HEXA，HSL/HSLA</h1>
+    <h2 class="hfut1">颜色名：color: yellow;</h2>
+    <br>
+    <h2 class="hfut2">rgb: background-color: rgb(0, 130, 255)</h2>
+    <h2 class="hfut2">还可以写成百分比的形式</h2>
+    <h2 class="hfut3">rgba: background-color: rgba(0, 130, 255, 0.5); 透明度范围为0~1</h2>
+    <br>
+    <h2 class="hfut4">HEX：background-color: #009dff; 还是rgb三种颜色的值，用16进制表示</h2>
+    <h2 class="hfut5">HEXA：background-color: #009dff9f; 还是rgba颜色的值，最后两位为透明度，00~ff</h2>
+    <h2 class="hfut5">值得注意的是IE浏览器不支持HEXA格式的颜色，即无透明度</h2>
+    <br>
+    <h2 class="hfut6">HSL:色相，饱和度，亮度(hue, saturation, lightness)</h2>
+    <h2 class="hfut6">background-color: hsl(200deg, 90%, 65%);根据色相环来确定色相</h2>
+    <h2 class="hfut7">HSLA:色相，饱和度，亮度，透明度</h2>
+    <h2 class="hfut7">background-color: hsl(200deg, 90%, 65%,50%);</h2>
+</body>
+
+</html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Css学习笔记2——伪类选择器——其余伪类选择器</title>
+    <title>Css学习笔记3——伪类选择器——其余伪类选择器</title>
     <style>
         /* 否定伪类 */
         /* 选中的是div的儿子p元素，但是排除类名为fail的元素 */
@@ -24,20 +24,45 @@
 
         /* UI伪类 */
         /* 选中的是勾选的复选框或单选按钮 */
-        input:checked {
+        /* input:checked {
             width: 100px;
             height: 100px;
-        }
+        } */
 
         /* 选中的是被禁用的input元素 */
-        input:disabled {
+        /* input:disabled {
             background-color: gray;
-        }
+        } */
 
         /* 选中的是可用的input元素 */
-        input:enabled {
+        /* input:enabled {
             background-color: green;
+        } */
+
+        /* 目标伪类 结构三*/
+        /* div {
+            width: 15%;
+            height: 200px;
+            background-color: aquamarine;
+            margin-right: 10px;
         }
+
+        div:target {
+            background-color: blue;
+        } */
+
+        /* 语言伪类 结构四*/
+        /* div:lang(en) {
+            color: brown;
+        }
+
+        div:lang(zh_CN) {
+            color: rgb(226, 43, 43);
+        }
+
+        :lang(zh_CN) {
+            color: rgb(226, 43, 43);
+        } */
     </style>
 </head>
 
@@ -54,7 +79,7 @@
     <!-- </div> -->
 
     <!-- 结构二 -->
-    <input type="checkbox">
+    <!-- <input type="checkbox">
     <label>
         <input type="radio" name="gender">
         男
@@ -64,8 +89,27 @@
         女
     </label>
     <input type="text">
-    <input type="text" disabled>
+    <input type="text" disabled> -->
 
+    <!-- 结构三 -->
+    <!-- <a href="#one">去第一个</a>
+    <a href="#two">去第二个</a>
+    <a href="#three">去第三个</a>
+    <a href="#four">去第四个</a>
+    <a href="#five">去第五个</a>
+    <div style="width:100%;background-color: aliceblue;display: flex;">
+        <div id="one">第一个</div>
+        <div id="two">第二个</div>
+        <div id="three">第三个</div>
+        <div id="four">第四个</div>
+        <div id="five">第五个</div>
+    </div> -->
+
+    <!-- 结构四 -->
+    <!-- <div>合工大</div>
+    <div lang="en">HFUT</div>
+    <p>学习笔记</p>
+    <span>真是太好玩了</span> -->
 </body>
 
 </html>
