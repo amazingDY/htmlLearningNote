@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记7——文本</title>
+    <style>
+        body {
+            font-size: 30px;
+        }
+
+        .massage1 {
+            color: blueviolet;
+        }
+
+        .massage2 {
+            letter-spacing: 10px;
+        }
+
+        .massage3 {
+            word-spacing: 30px;
+        }
+
+        .massage4 {
+            text-decoration: underline;
+        }
+
+        .massage5 {
+            text-indent: 60px;
+        }
+
+        .massage6 {
+            text-align: center;
+        }
+
+        .massage7 {
+            background-color: skyblue;
+            line-height: 30px;
+        }
+
+        .massage8 {
+            height: 100px;
+            color: orange;
+            background-color: green;
+            line-height: normal;
+        }
+
+        .massage9 {
+            height: 100px;
+            color: orange;
+            background-color: rgb(0, 162, 255);
+            line-height: 100px;
+        }
+
+        .massage10 {
+            height: 100px;
+            color: rgb(0, 162, 255);
+            background-color: rgb(255, 47, 168);
+            line-height: 160px;
+        }
+
+        .massage11 {
+            height: 100px;
+            color: rgb(234, 0, 255);
+            background-color: rgb(50, 105, 255);
+            line-height: 160px;
+        }
+
+        span {
+            font-size: 16px;
+            line-height: normal;
+            background-color: aqua;
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 文本颜色 -->
+    <div class="massage1">color:文字颜色</div>
+    <br>
+    <!-- 文本间距 -->
+    <div class="massage2">letter-spacing:单词间距</div>
+    <div class="massage3">word-spacing:单词间距，对中文无效</div>
+    <div class="massage3">示例：YOU HAVE A DREAM,你有一个梦想</div>
+    <br>
+    <!-- 文本修饰 -->
+    <div class="massage4">text-decoration:overline(上划线),underline(下划线),line-through(删除线),none(无线)</div>
+    <div class="massage4">后方还可以跟dotted(虚线)/wavy(波浪线) 颜色 示例：text-decoration：underline wavy rgb:(255,0,0)</div>
+    <div class="massage4">none可用于消除某些标签的默认效果例如a/ins/del</div>
+    <br>
+    <!-- 文本缩进 -->
+    <div class="massage5">text-indent:60px,文本缩进，具体大小与文字大小有关。</div>
+    <br>
+    <!-- 文本对齐-水平 -->
+    <div class="massage6">text-align:left,center,right,文本的水平对齐</div>
+    <br>
+    <!-- 行高 -->
+    <div class="massage7">
+        line-height:100px，行高，指的是一行文字的高度，尽量不要和font-size一样，
+        因为有些字设计的时候超出了设计框，比如这个界面文字大小为30，此时这段话的
+        line-height也是30，于是字母g就和下面的文字重合了，一般为文字大小的1.5-2倍
+    </div>
+    <div class="massage7">font-height的值可以为像素(100px)、默认值normal、数值(1.5,用的最多)、百分比(150%)</div>
+    <div class="massage7">行高的最小值为0，不能为复数</div>
+    <br>
+    <!-- 文本对齐-垂直 -->
+    <div class="massage8">顶部对齐，默认效果</div>
+    <div class="massage9">居中对齐 height=line-height 多行文本的居中对齐用定位去做</div>
+    <div class="massage10">靠下对齐 line-height=2xheight-fontsize-x（设计时的偏移量） 垂直靠下对齐最好的方法使用定位做</div>
+    <br>
+    <!-- vertical-align -->
+    <div class="massage11">vertical-align:baseline(默认，与父元素基线对齐)/top/middle(父元素基线加上X的一半)/bottom</div>
+    <div class="massage11" style="font-size: 50px;">vertical-align用于控制元素在其所在那一行的垂直对齐位置XX<span>测试文字</span></div>
+    <div class="massage11">vertical-align能操作的是行内元素</div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记7——字体</title>
+    <style>
+        body {
+            font-size: 40px;
+        }
+
+        .massage1 {
+            font-size: 40px;
+        }
+
+        .massage2 {
+            font-family: "楷体";
+        }
+
+        .massage3 {
+            font-style: italic;
+        }
+
+        .massage4 {
+            font-weight: 600;
+        }
+
+        .massage5 {
+            font: bold 100px "华文彩云", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 字体大小 -->
+    <div class="massage1">font-size:对chrome浏览器来说，默认最小的字体大小为12px，默认文字大小为16px</div>
+    <br>
+    <!-- 字体族 -->
+    <div class="massage2">font-family:字体可以在系统设置中找，最好使用正常字体，建议使用英文名，默认字体微软雅黑</div>
+    <div class="massage2">如果用了一些特殊的字体，用户有可能缺少此字体，而你又不想让网页文字变成微软雅黑，可以在family中指定多种字体(font-family:字体1，字体2，...)</div>
+    <div class="massage2">一般在字体结尾写一个sans-serif（非衬线字体）/serif（衬线字体）结尾，告诉浏览器在找不到前方字体时找一个衬线、非衬线字体来顶替原字体</div>
+    <br>
+    <!-- 字体风格 -->
+    <div class="massage3">font-style:italic(字体自带斜体，推荐),oblique(强行倾斜，不推荐)，normal(正常)</div>
+    <div class="massage3">使用标签em实现的倾斜主要是起强调作用，注重的不是它的倾斜效果</div>
+    <br>
+    <!-- 字体粗细 -->
+    <div class="massage4">font-weight:字体粗细->lighter,normal,bold,bolder</div>
+    <div class="massage4">还可以写数值，100-300、400-500、600，怎样区分取决于字体设计</div>
+    <br>
+    <!-- 字体属性的复合写法 -->
+    <div class="massage5">font:bold 40px "华文彩云"</div>
+    <div class="massage4">字体大小和字体族必须写，且必须放在最后两位</div>
+</body>
+
+</html>
