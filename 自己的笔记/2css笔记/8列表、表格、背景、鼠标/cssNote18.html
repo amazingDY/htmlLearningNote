@@ -4,11 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Css学习笔记8——鼠标</title>
+    <style>
+        body>div:nth-child(1) {
+            cursor: pointer;
+        }
+
+        body>div:nth-child(2) {
+            cursor: move;
+        }
+
+        body>div:nth-child(3) {
+            cursor: text;
+        }
+
+        body>div:nth-child(4) {
+            cursor: crosshair;
+        }
+
+        body>div:nth-child(5) {
+            cursor: wait;
+        }
+
+        body>div:nth-child(6) {
+            cursor: help;
+        }
+
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: antiquewhite;
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
 </head>
 
 <body>
-
+    <div>小手pointer</div>
+    <div>拖动move</div>
+    <div>文字选择器text</div>
+    <div>十字架crosshair</div>
+    <div>等待wait</div>
+    <div>帮助help</div>
 </body>
 
 </html>

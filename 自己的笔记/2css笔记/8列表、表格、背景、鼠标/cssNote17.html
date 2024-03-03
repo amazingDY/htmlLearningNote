@@ -4,11 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Css学习笔记8——背景</title>
+    <style>
+        .box1 {
+            width: 500px;
+            height: 500px;
+            border-radius: 250px;
+            border: 2px black solid;
+            font-size: 40px;
+            text-align: center;
+            line-height: 500px;
+            /* 背景颜色 */
+            background-color: rgb(0, 119, 255);
+            /* 背景图片*/
+            background-image: url(../../../自己的笔记/1html笔记/favicon.ico);
+            /* 设置背景图片的重复方式 repeat：重复 no-repeat:不重复*/
+            background-repeat: no-repeat;
+            /* 设置背景图片的位置 水平/垂直，还可以写像素,表示坐标*/
+            background-position: center;
+            /* 控制图片的拉伸 contain某一方向合适后停止 cover两个方向都拉伸*/
+            background-size: contain;
+            /* 还可以写成复合属性background 但要注意的是他会覆盖前方的属性，所以有想单独调整的属性最好写在它下边*/
+        }
+    </style>
 </head>
 
 <body>
-
+    <div class="box1">你好，世界</div>
 </body>
 
 </html>

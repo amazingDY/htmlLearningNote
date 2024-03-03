@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记9——元素的显示模式</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 500px;
+            height: 300px;
+            background-color: antiquewhite;
+            margin: 5px;
+        }
+
+        div {
+            font-size: 30px;
+        }
+
+        /* 块元素 */
+        .innerDiv1 {
+            background-color: aqua;
+            display: block;
+        }
+
+        /* 行内元素 */
+        .innerDiv2 {
+            background-color: aqua;
+            display: inline;
+        }
+
+        /* 行内块元素 */
+        .innerDiv3 {
+            background-color: aqua;
+            display: inline-block;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <pre style="font-size: 30px;">
+    元素的显示模式分为三种：
+    1.块元素
+    2.行内元素
+    3.行内块元素
+        </pre>
+    </div>
+    <div style="display: flex;">
+        <div class="container">
+            <div class="innerDiv1">这是块元素,独占一行</div>
+        </div>
+        <div class="container">
+            <div class="innerDiv2">这是行内元素,不独占一行，由内容决定，无法设置宽高</div>
+        </div>
+        <div class="container">
+            <div class="innerDiv3">这是行内块元素,不独占一行，由内容决定，可以设置宽高</div>
+        </div>
+    </div>
+</body>
+
+</html>

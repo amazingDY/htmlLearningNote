@@ -5,10 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Css学习笔记8——列表</title>
+    <style>
+        .list1 {
+            list-style-type: decimal;
+            list-style-position: inside;
+            list-style-image: url(../../../代码/favicon.ico);
+        }
+
+        li {
+            background-color: orange;
+        }
+    </style>
 </head>
 
 <body>
-
+    <ul class="list1">
+        <li>list-style-type:列表符号类型
+            <pre>
+                    none ：不显示前面的标识（很常用！）
+                    square ：实心方块
+                    disc ：圆形
+                    decimal ：数字
+                    lower-roman ：小写罗马字
+                    upper-roman ：大写罗马字
+                    lower-alpha ：小写字母
+                    upper-alpha ：大写字母
+            </pre>
+        </li>
+        <li>list-style-position：列表符号位置</li>
+        <!-- inside outside -->
+        <li>list-style-image:列表符号自定义</li>
+        <li>list-style:复合属性，上述属性都可写入</li>
+    </ul>
 </body>
 
 </html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记9——盒子模型</title>
+    <style>
+        label {
+            font-size: 30px;
+            width: 10%;
+            text-align: right;
+        }
+
+        .bigContainer {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+        }
+
+        .container {
+            width: 40%;
+            height: 400px;
+            /* 垂直居中 */
+            margin: 0 auto;
+            background-color: antiquewhite;
+        }
+
+        .container>div {
+            background-color: aqua;
+        }
+
+        /* content内容区域 */
+        /* max-width 、 min-width  一般不与 width  一起使用。
+        max-height 、 min-height  一般不与 height 一起使用 */
+        .d1 {
+            /* 设置宽度 */
+            /* width: 100px; */
+            /* 设置最小/最大宽度 */
+            min-width: 200px;
+            max-width: 500px;
+            /* 设置高度 */
+            /* height: 200px; */
+            /* 设置最小/最大高度 */
+            min-height: 200px;
+            max-height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigContainer">
+        <label>content</label>
+        <div class="container">
+            <div class="d1"></div>
+        </div>
+        <label>margin</label>
+        <div class="container">
+
+        </div>
+    </div>
+    <div class="bigContainer">
+        <label>border</label>
+        <div class="container">
+
+        </div>
+        <label>padding</label>
+        <div class="container">
+
+        </div>
+    </div>
+</body>
+
+</html>

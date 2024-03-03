@@ -4,11 +4,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Css学习笔记8——表格</title>
+    <style>
+        /* 边框相关属性，其他元素也可以用 */
+        .table1 {
+            border-width: 2px;
+            border-color: black;
+            border-style: solid;
+        }
+
+        /* 复合写法 */
+        .table1 td,
+        .table1 th {
+            border: 2px black solid;
+        }
+
+        .table2 td,
+        .table2 th {
+            border: 1px black solid;
+        }
+
+        /* 以下为表格独有的属性 */
+        /* 跨行和跨列属于html属性，不在css里面调 */
+        .table2 {
+            border: 1px black solid;
+            width: 400px;
+            /* 控制表格宽度 */
+            /* auto:自适应 fixed:平均分 */
+            table-layout: fixed;
+            /* 控制单元格间距 合并单元格边框后不生效*/
+            border-spacing: 0;
+            /* 合并相邻的单元格边框 */
+            /* collapse:合并 separate:不合并 */
+            border-collapse: separate;
+            /* 隐藏无内容的单元格 合并单元格边框后不生效 */
+            empty-cells: hide;
+            /* 设置表格标题的位置top bottom */
+            caption-side: bottom;
+        }
+
+        .number {
+            width: 50px;
+            height: 40px;
+        }
+    </style>
 </head>
 
 <body>
-
+    <table class="table1">
+        <caption>人员信息</caption>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>政治面貌</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>李四</td>
+                <td>18</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>王五</td>
+                <td>18</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>赵六</td>
+                <td>18</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>18</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table class="table2">
+        <caption>人员信息</caption>
+        <thead>
+            <tr>
+                <th class="number">序号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>政治面貌</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>李四</td>
+                <td>18</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>王五</td>
+                <td>18</td>
+                <td>女</td>
+                <td>党员</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>赵六</td>
+                <td>18</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>18</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 </html>
