@@ -45,6 +45,53 @@
             min-height: 200px;
             max-height: 300px;
         }
+
+        /* padding: 10px; 四个方向内边距都是 10px 。
+        2. padding: 10px 20px;（上下、左右）
+        3. padding: 10px 20px 30px;（上、左右、下）
+        4. padding: 10px 20px 30px 40px; （上、右、下、左 ）*/
+        /* 行内元素的上下内边距设置了之后会出问题，左右可以完美设置 */
+        .d2 {
+            width: 200px;
+            height: 150px;
+            padding-left: 20px;
+            padding-top: 40px;
+            padding-right: 20px;
+            padding-bottom: 40px;
+            padding: 30px 20px 10px 5px;
+        }
+
+        /* border区域 */
+        /* none ： 默认值
+        solid ：实线
+        dashed ：虚线
+        dotted ：点线
+        double ：双实线*/
+        .d3 {
+            width: 200px;
+            height: 150px;
+            /* 边框属性 */
+            border-style: solid;
+            border-color: rgb(255, 0, 0);
+            border-width: 5px;
+            border-left-width: 10px;
+            border-left-color: blueviolet;
+            border-top-right-radius: 40px;
+            /* 复合属性 */
+            border-left: 50px solid blue;
+        }
+
+        /* margin */
+        /* 子元素的 margin ，是参考父元素的 content 计算的。（因为是父亲的 content 中承装着子元素）
+        2. 上 margin 、左 margin ：影响自己的位置；下 margin 、右 margin ：影响后面兄弟元素的位置。
+        3. 块级元素、行内块元素，均可以完美地设置四个方向的 margin ；但行内元素，左右margin 可以完美设置，上下 margin 设置无效。
+        4. margin 的值也可以是 auto ，如果给一个块级元素设置左右 margin 都为 auto ，该块级元素会在父元素中水平居中。
+        5. margin 的值可以是负值。 */
+        .d4 {
+            width: 300px;
+            height: 200px;
+            margin: 20px;
+        }
     </style>
 </head>
 
@@ -56,17 +103,17 @@
         </div>
         <label>margin</label>
         <div class="container">
-
+            <div class="d4">margin</div>
         </div>
     </div>
     <div class="bigContainer">
         <label>border</label>
         <div class="container">
-
+            <div class="d3">border</div>
         </div>
         <label>padding</label>
         <div class="container">
-
+            <div class="d2">padding</div>
         </div>
     </div>
 </body>

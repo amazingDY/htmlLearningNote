@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记9——处理内容溢出</title>
+    <style>
+        #d1 {
+            width: 400px;
+            height: 400px;
+            font-size: 25px;
+            background-color: aqua;
+            /* 解决方法 */
+            /* 隐藏 */
+            /* overflow: hidden; */
+            /* 一直显示滚动条 */
+            /* overflow: scroll; */
+            /* 超出时显示滚动条 */
+            overflow: auto;
+            /* 横向溢出处理,实验效果，且visible是默认值 */
+            /* overflow-x: visible; */
+        }
+
+        #d2 {
+            width: 800px;
+            height: 200px;
+            font-size: 25px;
+            background-color: rgb(255, 166, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, reiciendis commodi quibusdam, quod nemo
+        reprehenderit<div id="d2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, reiciendis commodi quibusdam, quod nemo
+            reprehenderit veniam perferendis natus sunt placeat vel minus iste explicabo cum, velit repudiandae
+            dignissimos
+            repellendus veritatis. Autem, minus. Maiores minima a eius dolore odit, cumque eligendi voluptatum voluptate
+            nam
+
+        </div> veniam perferendis natus sunt placeat vel minus iste explicabo cum, velit repudiandae dignissimos
+        repellendus veritatis. Autem, minus. Maiores minima a eius dolore odit, cumque eligendi voluptatum voluptate nam
+        animi eveniet
+        vero dolorem natus iure at. ipsum dolor sit amet consectetur adipisicing elit. Nihil velit eius
+        minima esse porro nostrum
+    </div>
+</body>
+
+</html>

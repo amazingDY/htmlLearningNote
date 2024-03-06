@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记10——浮动</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 50%;
+        }
+
+        .container1 {
+            background-color: antiquewhite;
+            font-size: 25px;
+        }
+
+        .container2 {
+            background-color: aqua;
+            font-size: 25px;
+        }
+
+        .container3 {
+            background-color: aquamarine;
+        }
+
+        .container4 {
+            background-color: deeppink;
+        }
+
+        /* 用于文字 */
+        .container2::first-letter {
+            font-weight: bold;
+            font-size: 70px;
+            float: inline-start;
+        }
+
+        /* 用于图片 */
+        .img1 {
+            height: 320px;
+            margin-right: 0.5em;
+            /* 浮动并被挤向左方 */
+            float: left;
+        }
+
+        /* 浮动的特点 */
+        .box {
+            font-size: 30px;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .box1 {
+            background-color: blue;
+        }
+
+        /* 1.浮动之后脱离文档流，即成为3D状态，与其他元素不在一个图层，但文字会自动避开被遮挡的部分 */
+        /* 2.浮动之后的元素可以设置宽高，且内外边框值可完美设置，不会出现塌陷和合并问题 */
+        /* 3.浮动之后不会像行内块一样出现行内块空白问题 */
+        .box2 {
+            background-color: blueviolet;
+            float: left;
+        }
+
+        .box3 {
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex;width: 100%;height: 1000px;">
+        <div style="background-color:aqua;width:50%;height:100%;">
+            <div class="container container1">
+                <img class="img1" src="../../data/谭松韵1.png" alt="谭松韵">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos obcaecati earum, unde illo deleniti harum
+                quibusdam quo inventore aut commodi doloremque esse necessitatibus ab corrupti error voluptatibus eaque,
+                consequuntur modi.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos obcaecati earum, unde
+                illo deleniti harum
+                quibusdam quo inventore aut commodi doloremque esse necessitatibus ab corrupti error voluptatibus eaque,
+                consequuntur modi.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos obcaecati earum, unde
+                illo deleniti harum
+                quibusdam quo inventore aut commodi doloremque esse necessitatibus ab corrupti error voluptatibus eaque,
+                consequuntur modi.
+            </div>
+            <div class="container container2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil illum iure aliquam minima officia quaerat
+                nemo facilis repellendus doloribus? Adipisci placeat veniam aperiam iste praesentium accusantium enim
+                pariatur dignissimos, quam in commodi quidem minus quisquam voluptas laborum qui voluptatibus nemo ab
+                aut at vitae ipsam facilis laudantium. Excepturi, ad nemo?
+            </div>
+        </div>
+        <div style="background-color:blueviolet;width:50%;height:100%;">
+            <div class="container container3">
+                <div class="box box1">盒子一</div>
+                <div class="box box2">盒子二</div>
+                <div class="box box3">盒子三</div>
+            </div>
+            <div class="container container4"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记10——粘性定位</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        .head {
+            height: 100px;
+            background-color: orange;
+            text-align: center;
+            line-height: 100px;
+            font-size: 40px;
+        }
+
+        .title {
+            font-size: 40px;
+            background-color: aquamarine;
+            /* 粘性定位 */
+            /* 参考点是第一个具有滚动属性的祖先，即使他不可真正滚动 常用top:0*/
+            /* 不 脱离文档流，可设置浮动和margin值 */
+            position: sticky;
+            top: 0;
+        }
+
+        /* 这是个例子，让title的祖先容器有了滚动条 */
+        /* .test {
+            height: 500px;
+            overflow: auto;
+        } */
+
+        h2 {
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">网页头部</div>
+    <div class="test">
+        <div class="container">
+            <div class="title">A</div>
+            <h2>A1</h2>
+            <h2>A2</h2>
+            <h2>A3</h2>
+            <h2>A4</h2>
+            <h2>A5</h2>
+            <h2>A6</h2>
+            <h2>A7</h2>
+        </div>
+        <div class="container">
+            <div class="title">B</div>
+            <h2>B1</h2>
+            <h2>B2</h2>
+            <h2>B3</h2>
+            <h2>B4</h2>
+            <h2>B5</h2>
+            <h2>B6</h2>
+            <h2>B7</h2>
+        </div>
+        <div class="container">
+            <div class="title">C</div>
+            <h2>C1</h2>
+            <h2>C2</h2>
+            <h2>C3</h2>
+            <h2>C4</h2>
+            <h2>C5</h2>
+            <h2>C6</h2>
+            <h2>C7</h2>
+            <h2>C1</h2>
+            <h2>C2</h2>
+            <h2>C3</h2>
+            <h2>C4</h2>
+            <h2>C5</h2>
+            <h2>C6</h2>
+            <h2>C7</h2>
+        </div>
+    </div>
+</body>
+
+</html>

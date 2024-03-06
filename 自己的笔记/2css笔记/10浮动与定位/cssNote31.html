@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记10——定位层级</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            background-color: aqua;
+            border: 1px black solid;
+            padding: 10px;
+            position: relative;
+            /* 父元素的z-index会影响子元素的显示效果 */
+            z-index: 5;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+        }
+
+        /* 值得注意的是定位可以越过padding */
+        .box1 {
+            background-color: antiquewhite;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .box2 {
+            background-color: aquamarine;
+            position: relative;
+            top: -100px;
+            left: 50px;
+            /* 改变定位层级 */
+            /* 默认层级为0，注意的是必须要开启定位属性，才能设置其z-index */
+            z-index: 7;
+        }
+
+        .box3 {
+            background-color: deeppink;
+            position: absolute;
+            left: 110px;
+            top: 110px;
+            z-index: 1;
+        }
+
+        .box4 {
+            background-color: orange;
+            position: fixed;
+            top: 168px;
+            left: 168px;
+            z-index: 6;
+        }
+
+        .box5 {
+            background-color: blueviolet;
+            position: fixed;
+            left: 218px;
+            top: 218px;
+            /* 外部元素的z-index虽然比子元素的层级低，但仍可能会展示在子元素之上 */
+            z-index: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+    </div>
+    <div class="box box5"></div>
+</body>
+
+</html>

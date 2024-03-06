@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记10——浮动练习</title>
+    <style>
+        .container {
+            width: 97.4%;
+            height: 50%;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container1 {
+            background-color: antiquewhite;
+        }
+
+        .container2 {
+            background-color: aqua;
+        }
+
+        .container3 {
+            background-color: aquamarine;
+        }
+
+        .container4 {
+            background-color: deeppink;
+        }
+
+        .inner1 {
+            width: 100%;
+            /* height: 400px; */
+            background-color: gray;
+        }
+
+        .inner2 {
+            width: 40%;
+            /* height: 400px; */
+            background-color: gray;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            margin: 10px;
+        }
+
+        .box11 {
+            float: right;
+        }
+
+        .box21 {
+            float: left;
+        }
+
+        .box31,
+        .box32,
+        .box33 {
+            float: left;
+        }
+
+        .box41 {
+            height: 150px;
+        }
+
+        .box41,
+        .box42,
+        .box43 {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex;width: 100%;height: 800px;">
+        <div style="width:50%;height:100%;">
+            <div class="container container1">
+                <div class="inner1">
+                    <div class="box box11">1</div>
+                    <div class="box box12">2</div>
+                    <div class="box box13">3</div>
+                </div>
+            </div>
+            <div class="container container2">
+                <div class="inner1">
+                    <div class="box box21">1</div>
+                    <div class="box box22">2</div>
+                    <div class="box box23">3</div>
+                </div>
+            </div>
+        </div>
+        <div style="width:50%;height:100%;">
+            <div class="container container3">
+                <div class="inner2">
+                    <div class="box box31">1</div>
+                    <div class="box box32">2</div>
+                    <div class="box box33">3</div>
+                </div>
+            </div>
+            <div class="container container4">
+                <div class="inner2">
+                    <div class="box box41">1</div>
+                    <div class="box box42">2</div>
+                    <div class="box box43">3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

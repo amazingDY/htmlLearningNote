@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记10——浮动的影响</title>
+    <style>
+        .container {
+            width: 500px;
+            background-color: gray;
+            border: 1px black solid;
+            /* 解决方案1，解决子元素都浮动导致父元素无宽度的问题 */
+            /* height: 500px; */
+            /* 解决方案2，父元素也浮动，让其与子元素处于同一图层 */
+            /* float: left; */
+            /* 解决方案3 */
+            /* overflow: hidden; */
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px black solid;
+            margin: 10px;
+        }
+
+        .box1,
+        .box2,
+        .box3 {
+            float: left;
+        }
+
+        /* 解决方案4，清除浮动，left、right、both */
+        /* .box4 {
+            clear: both;
+        } */
+
+        .mofa {
+            clear: both;
+        }
+
+        .box5 {
+            background-color: orange;
+        }
+
+        /* 解决方案5，设置一个伪元素，用它来清除浮动影响 */
+        .container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <div class="box box0"></div> -->
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <!-- <div class="box box4">4</div> -->
+        <!-- <div class="mofa"></div> -->
+    </div>
+    <div class="box5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione fugit accusantium, sed
+        dolorem vero in odit ipsam provident? Necessitatibus in blanditiis excepturi consectetur accusamus quod
+        debitis, temporibus officia inventore odit deleniti illo vero maiores sunt saepe, incidunt nam ipsa illum a,
+        odio eligendi? Aliquam nobis corrupti nisi quo, repudiandae, praesentium vel ad atque at nulla temporibus
+        eos! Vitae repudiandae nihil iusto libero sint hic sit, dicta debitis neque in ratione perspiciatis sapiente
+        inventore? Facilis quos saepe reiciendis, fuga debitis veniam.</div>
+</body>
+
+</html>

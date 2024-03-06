@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css学习笔记10——定位</title>
+    <style>
+        .container {
+            width: 800px;
+            background-color: antiquewhite;
+            border: 1px black solid;
+            padding: 10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        /* 相对定位 */
+        .box1 {
+            background-color: aqua;
+        }
+
+        .box3 {
+            background-color: chocolate;
+        }
+
+        /* 绝对定位 */
+        .box4 {
+            background-color: aqua;
+        }
+
+        .box6 {
+            background-color: chocolate;
+        }
+
+        /* 固定定位 */
+        .box7 {
+            background-color: aqua;
+        }
+
+        .box9 {
+            background-color: chocolate;
+        }
+
+        .box2 {
+            background-color: aquamarine;
+            /* 相对定位 left和right同时写就left生效 top和bottom,top生效*/
+            /* 相对于自身原本的位置 不脱离文档流*/
+            position: relative;
+            left: 100px;
+        }
+
+        .box5 {
+            background-color: aquamarine;
+            /* 绝对定位 子元素开启绝对定位时，最好将父元素设置为相对定位*/
+            /* 相对于第一个开启定位的祖先元素的位置 脱离文档流*/
+            /* 左右同时开，左生效，上下同时开，上生效 与margin同时用时，写了left就能用margin-left，没写就不能*/
+            /* 绝对定位的元素无法开启浮动，两个都写了，一定是绝对定位生效 */
+            /* 开启绝对定位之后，元素会变成定位元素 宽高由内容撑开，自由设置宽高 */
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+        .box8 {
+            background-color: aquamarine;
+            /* 固定定位 */
+            /* 相对于视口的位置 可以用margin，但跟绝对定位一样，要设置对应方向的值 */
+            /* 无法开启浮动 脱离文档流*/
+            position: fixed;
+            right: 0px;
+            top: 0px;
+        }
+
+        /* 粘性定位看Note30 */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+    </div>
+    <div class="container">
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+    </div>
+    <div class="container">
+        <div class="box box7"></div>
+        <div class="box box8">固定定位</div>
+        <div class="box box9"></div>
+    </div>
+</body>
+
+</html>
