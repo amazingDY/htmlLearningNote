@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 兼容性处理，让ie9以下的浏览器也支持H5的大部分新标签,例如video标签就不行 -->
+    <!--[if lt ie 9]>
+    <script src="./html5shiv.js"></script>
+    <![endif]-->
+    <!--设置IE总是使用最新的文档模式进行渲染-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!--优先使用 webkit ( Chromium ) 内核进行渲染, 针对360等壳浏览器-->
+    <meta name="renderer" content="webkit">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>HTML5新增的标签</h1>
+    <!-- 1.以下为H5新增的布局标签，可以将其看作是有语义的div -->
+    <header>
+        <!-- header标签，用于展示标题 -->
+        <h2>
+            1.新增的布局标签
+        </h2>
+    </header>
+    <nav>
+        <!-- nav标签，导航栏 -->
+        <a href="#">链接</a>
+        <a href="#">链接</a>
+        <a href="#">链接</a>
+        <a href="#">链接</a>
+    </nav>
+    <article>
+        <h2>article标签，文章和评论</h2>
+        <section>
+            <h3>section与article的区别和联系</h3>
+            section标签，某段文字，一般要带一个标题
+            1. artical 里面可以有多个 section 。
+            2. section 强调的是分段或分块，如果你想将一块内容分成几段的时候，可使用 section 元
+            素。
+            3. article 比 section 更强调独立性，一块内容如果比较独立、比较完整，应该使用
+            article 元素。
+        </section>
+    </article>
+    <aside>
+        <nav>
+            <ul>
+                <li><a href="#">秒杀专区</a></li>
+                <li><a href="#">秒杀专区</a></li>
+                <li><a href="#">秒杀专区</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>main标签，主要内容，不推荐使用，W3C不支持，IE不兼容</main>
+    <footer>footer标签，页面脚注</footer>
+    <hr>
+    <h2>2.新增的状态标签</h2>
+    <h3>meter标签</h3>
+    <!-- 若没有optimum(最佳值)属性，value在low和high之间是绿色，之外是橙黄色 -->
+    <!-- 设置之后，value在min和low之间是红色，在low和high之间是黄色，high和max之间是绿色 -->
+    <span>手机电量</span><meter max="100" min="0" low="10" high="20" optimum="90" value="19"></meter>
+    <br>
+    <h3>progree标签</h3>
+    <!-- meter和progress都可以设置width和height属性 -->
+    <span>当前进度</span><progress max="100" value="30"></progress>
+    <hr>
+    <h2>3.新增的列表标签</h2>
+    <h3>datalist标签</h3>
+    <form action="#">
+        <input type="text" list="myList">
+        <button>搜索</button>
+    </form>
+    <datalist id="myList">
+        <option value="周杰伦">周杰伦</option>
+        <option value="周冬雨">周冬雨</option>
+        <option value="温兆伦">温兆伦</option>
+        <option value="马冬梅">马冬梅</option>
+    </datalist>
+    <h3>details标签和summary标签</h3>
+    <details>
+        <summary>如何一夜暴富</summary>
+        <p>学前端？？学后端！！</p>
+    </details>
+    <hr>
+    <h2>4.新增的文本标签</h2>
+    <h3>ruby标签，用于展示拼音</h3>
+    <ruby>
+        <span>魑魅魍魉</span>
+        <rt>chī mèi wǎng liǎng</rt>
+    </ruby>
+    <h3>mark标签,用于标记需要特别强调的文字</h3>
+    <p>使用场景是用于展示搜索结果的<mark>关键字</mark></p>
+    <hr>
+    <h2>5.新增的表单控件属性</h2>
+    <pre style="font-size: 18px;">
+    placeholder:提示文本，用于文字输入类表单控件
+    required:必填项，用于除按扭外的表单控件
+    autofocus:自动获取焦点
+    autocomplete:自动完成(保存输入框的值),用于文字输入框，不可用于密码输入框和多行输入框
+    patten:填写正则表达式，用于表单验证，注意:多行输入不可用，且不验证空项，一般与require一起用
+    </pre>
+    <form action="">
+        账号：<input type="text" name="account" placeholder="请输入账号" required autocomplete="on" pattern="\w{6}">
+        <br>
+        密码：<input type="password" name="password" placeholder="请输入密码" required>
+        <br>
+        性别：
+        <input type="radio" name="gender" value="male">男
+        <input type="radio" name="gender" id="female">女
+        <br>
+        爱好：
+        <input type="checkbox" name="hobby" value="抽烟">抽烟
+        <input type="checkbox" name="hobby" value="喝酒">喝酒
+        <input type="checkbox" name="hobby" value="烫头">烫头
+        <br>
+        其他：
+        <textarea name="other" cols="30" rows="2"></textarea>
+        <br>
+        <button type="submit">提交</button>
+        <br>
+        <input type="checkbox" name="agreement" value="同意" required>请勾选用户协议
+    </form>
+    <h3>input新增加的功能</h3>
+    <form action="">
+        邮箱email：<input type="email" name="email">
+        <br>
+        网址url：<input type="url" name="url">
+        <br>
+        <!-- step:步长，每次点击增加的数字，且它能限制输入框内的数字范围 -->
+        数字number：<input type="number" name="number" step="1" min="20" max="80">
+        <br>
+        <!-- 不做校验，有清空功能 -->
+        搜索search：<input type="search" name="search">
+        <br>
+        <!-- 在移动端能唤起数字键盘 -->
+        电话tel：<input type="tel" name="tel">
+        <br>
+        范围选择器range：<input type="range" name="range" min="20" max="80">
+        <br>
+        颜色选择器color：<input type="color" name="color">
+        <br>
+        日期选择器date：<input type="date" name="date">
+        <br>
+        月份month：<input type="month" name="month">
+        <br>
+        周week：<input type="week" name="week">
+        <br>
+        时间time：<input type="time" name="time">
+        <br>
+        日期加时间datetime-local<input type="datetime-local" name="datetime-local">
+        <br>
+        网址url：<input type="url" name="url">
+        <br>
+        文件file：<input type="file" name="file">
+        <br>
+        <button type="submit">提交</button>
+    </form>
+    <h3>form新增属性</h3>
+    <p>在form中写上novalidate，则在提交时就不做任何验证</p>
+    <hr>
+    <h2>6.新增的多媒体标签</h2>
+    <h3>视频标签video</h3>
+    <p>autoplay:自动播放，生效的前提是muted,即静音后才能自动播放</p>
+    <p>当然，有些时候也可以有声音的自动播放，前提是媒体参与度要够高chrome://media-engagement/</p>
+    <img src="../data/媒体参与度.png" alt="媒体参与度" height="300px">
+    <video src="../data/video.mp4" poster="../data/fbiWarning.png" preload="auto" width="500px" controls muted
+        loop></video>
+    <h3>音频标签audio</h3>
+    <p>音频标签即使静音了也无法自动播放(现在好像是可以了20240308)</p>
+    <audio src="../data/Die For You.mp3" preload="metadata" controls autoplay muted loop></audio>
+    <h2>7.新增全局属性</h2>
+    <!-- 隐藏且占有原来的位置visibility: hidden;
+        隐藏且不占有原来的位置display: none; -->
+    <pre style="font-size: 20px;">
+    1.contenteditable
+    表示元素是否可被用户编辑，可选值如下：
+    true ：可编辑
+    false ：不可编辑
+    2.draggable
+    表示元素可以被拖动，可选值如下：
+    true ：可拖动
+    false ：不可拖动
+    3.hidden 隐藏元素,与display:none效果一致，不占位
+    4.spellcheck
+    规定是否对元素进行拼写和语法检查，可选值如下：
+    true ：检查
+    false ：不检查
+    5.contextmenu 规定元素的上下文菜单，在用户鼠标右键点击元素时显示。
+    6.data-* 用于存储页面的私有定制数据。
+    </pre>
+</body>
+
+</html>
