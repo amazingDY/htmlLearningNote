@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3笔记——新长度单位</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 100px;
+            background-color: antiquewhite;
+        }
+
+        /* 1. rem 根元素字体大小的倍数，只与根元素字体大小有关。
+        2. vw  视口宽度的百分之多少 10vw  就是视口宽度的 10% 。
+        3. vh  视口高度的百分之多少 10vh  就是视口高度的 10% 。
+        4. vmax  视口宽高中大的那个的百分之多少。（了解即可）
+        5. vmin  视口宽高中小的那个的百分之多少。（了解即可） */
+        .box2 {
+            width: 50vw;
+            height: 30vh;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">px像素</div>
+    <div class="box2">vm视口宽度，10vm则为视口宽度的10%</div>
+</body>
+
+</html>

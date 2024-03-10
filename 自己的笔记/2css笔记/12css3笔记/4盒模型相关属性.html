@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3笔记——盒模型相关属性</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+            padding: 5px;
+            border: 3px black solid;
+            margin: 0 10px;
+            /* 默认值 */
+            box-sizing: content-box;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            padding: 5px;
+            border: 3px black solid;
+            margin: 0 10px;
+            /* 怪异盒模型 */
+            box-sizing: border-box;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: chocolate;
+            /* none,both,horizontal:水平调节宽度,vertical:垂直调整高度 */
+            overflow: hidden;
+            resize: both;
+        }
+
+        /* 阴影 */
+        .box4 {
+            width: 250px;
+            height: 200px;
+            background-color: chocolate;
+            margin: 0 10px;
+        }
+
+        .box41 {
+            box-shadow: 5px 5px;
+        }
+
+        .box42 {
+            box-shadow: 5px 5px gray;
+        }
+
+        .box43 {
+            box-shadow: 5px 5px 5px;
+        }
+
+        .box44 {
+            box-shadow: 5px 5px 5px gray;
+        }
+
+        .box45 {
+            box-shadow: 5px 5px 5px 3px gray;
+        }
+
+        .box46 {
+            box-shadow: 5px 5px 5px 3px gray inset;
+        }
+
+        /* 不透明度 */
+        .box5 {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            font-size: 18px;
+            position: absolute;
+            left: 30px;
+            top: 20px;
+            /* 设置不透明度 */
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>盒子模型相关的属性</h1>
+    <h2>1.box-sizing怪异盒模型</h2>
+    <div style="display: flex;">
+        <div class="box1">content-box： width 和 height 设置的是盒子内容区的大小。（默认值）</div>
+        <div class="box2">border-box： width 和 height 设置的是盒子总大小。（怪异盒模型）</div>
+    </div>
+    <hr>
+    <h2>2.resize调整盒子大小</h2>
+    <div class="box3">要用resize，必须设置overflow属性</div>
+    <hr>
+    <h2>3.box-shadow盒子阴影</h2>
+    <div style="display: flex;">
+        <div class="box4 box41">/* 写两个值，含义：水平位置、垂直位置 */<br>
+            box-shadow: 10px 10px;</div>
+        <div class="box4 box42">/* 写三个值，含义：水平位置、垂直位置、颜色 */<br>
+            box-shadow: 10px 10px red;</div>
+        <div class="box4 box43">/* 写三个值，含义：水平位置、垂直位置、模糊值 */<br>
+            box-shadow: 10px 10px 10px;</div>
+        <div class="box4 box44">/* 写四个值，含义：水平位置、垂直位置、模糊值、颜色 */<br>
+            box-shadow: 10px 10px 10px red;</div>
+        <div class="box4 box45">/* 写五个值，含义：水平位置、垂直位置、模糊值、外延值、颜色 */<br>
+            box-shadow: 10px 10px 10px 10px blue;</div>
+        <div class="box4 box46">/* 写六个值，含义：水平位置、垂直位置、模糊值、外延值、颜色、内阴影 */<br>
+            box-shadow: 10px 10px 20px 3px blue inset;</div>
+    </div>
+    <hr>
+    <h2>4.opacity不透明度</h2>
+    <div style="position: relative;width: 500px;height: 350px;background-color:orange;">
+        <div class="box5">
+            opacity 是一个属性，设置的是整个元素（包括元素里的内容）的不透明度。
+            rgba 是颜色的设置方式，用于设置颜色，它的透明度，仅仅是调整颜色的透明度。
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3笔记——渐变色</title>
+    <style>
+        .box {
+            width: 270px;
+            height: 200px;
+            border: 1px black solid;
+            float: left;
+            margin: 10px 10px;
+            font-size: 20px;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        /* 1.线性渐变 */
+        /* 渐变色本质上是一张图片 */
+        .box1 {
+            background-image: linear-gradient(red, yellow, green);
+        }
+
+        /* 修改渐变方向 */
+        .box2 {
+            background-image: linear-gradient(to right, red, yellow, green);
+        }
+
+        .box3 {
+            background-image: linear-gradient(to right top, red, yellow, green);
+        }
+
+        /* 修改渐变角度 */
+        .box4 {
+            background-image: linear-gradient(20deg, red, yellow, green);
+        }
+
+        /* 修改渐变的位置 */
+        .box5 {
+            background-image: linear-gradient(red, yellow 150px, green);
+        }
+
+        /* 五彩斑斓的文字 */
+        .box6 {
+            font-size: 35px;
+            font-weight: bold;
+            color: transparent;
+            background-clip: text;
+            background-image: linear-gradient(20deg, red, yellow, green)
+        }
+
+        /* 2.镜像渐变 */
+        .box7 {
+            background-image: radial-gradient(red, yellow, green);
+        }
+
+        /* 改变圆心的位置 */
+        .box8 {
+            background-image: radial-gradient(at right top, red, yellow, green);
+
+        }
+
+        /* 改变圆心的位置 */
+        .box9 {
+            background-image: radial-gradient(at 200px 100px, red, yellow, green);
+        }
+
+        /* 强制正圆 */
+        .box10 {
+            background-image: radial-gradient(circle, red, yellow, green);
+        }
+
+        .box11 {
+            background-image: radial-gradient(150px 150px, red, yellow, green);
+        }
+
+        /* 改变渐变位置 */
+        .box12 {
+            background-image: radial-gradient(red 50px, yellow 100px, green);
+        }
+
+        /* 可以将属性混写 */
+        .box13 {
+            background-image: radial-gradient(100px 60px at 200px 150px, red 30px, yellow 200px, green);
+        }
+
+        /* 3.重复渐变 */
+        .box14 {
+            box-sizing: border-box;
+            padding-top: 60px;
+            font-size: 20px;
+            line-height: normal;
+            background-image: repeating-linear-gradient(red 50px, yellow, green 150px);
+        }
+
+        .box15 {
+            background-image: repeating-radial-gradient(red, yellow 70px, green 120px);
+        }
+
+        /* 4.渐变的应用 */
+        .box16 {
+            width: 400px;
+            height: 600px;
+            padding: 20px;
+            border: 1px black solid;
+            float: left;
+            box-shadow: 5px 5px 10px gray;
+            border-radius: 3px;
+            background-image: repeating-linear-gradient(transparent 0px, transparent 29px, gray 30px);
+            background-clip: content-box
+        }
+
+        .box17 {
+            width: 400px;
+            height: 400px;
+            border-radius: 200px;
+            line-height: 400px;
+            border: 0px;
+            background-image: radial-gradient(at 300px 100px, white 50px, gray);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1">默认情况，从上到下</div>
+    <div class="box box2">修改渐变方向</div>
+    <div class="box box3">修改渐变方向</div>
+    <div class="box box4">修改渐变角度</div>
+    <div class="box box5">修改渐变的位置</div>
+    <div class="box box6">炫酷的文字</div>
+    <div class="box box7">径向渐变</div>
+    <div class="box box8">改变圆心的位置(关键字)</div>
+    <div class="box box9">改变圆心的位置(像素)</div>
+    <div class="box box10">强制正圆</div>
+    <div class="box box11">强制正圆(指定半径)</div>
+    <div class="box box12">改变渐变位置</div>
+    <div class="box box13">可以将属性混写</div>
+    <div class="box box14">在没有发生渐变的区域再次发生渐变就是重复渐变</div>
+    <div class="box box15">重复径向渐变</div>
+    <div class="box box16">制作作文纸</div>
+    <div class="box box17">绘制立体图形</div>
+</body>
+
+</html>

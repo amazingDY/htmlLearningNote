@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3笔记——web字体</title>
+    <style>
+        /* 过大的字体会导致网页加载过慢，一般别用 */
+        @font-face {
+            font-family: "嘻嘻哈哈";
+            src: url('./font1/方正手迹.ttf')
+        }
+
+        .box1 {
+            font-size: 100px;
+            font-family: '嘻嘻哈哈';
+        }
+
+        /* 定制的字体，能够极大的减少字体包的大小 */
+        @font-face {
+            font-family: "阿里字体";
+            font-display: swap;
+            src: url('./font2/webfont.eot');
+            /* IE9 */
+            src: url('./font2/webfont.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('./font2/webfont.woff2') format('woff2'),
+                url('./font2/webfont.woff') format('woff'),
+                /* chrome、firefox */
+                url('./font2/webfont.ttf') format('truetype'),
+                /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+                url('./font2/webfont.svg#webfont') format('svg');
+            /* iOS 4.1- */
+        }
+
+        .box2 {
+            font-size: 100px;
+            font-family: '阿里字体';
+        }
+
+        /* 引用在线的定制的字体，能够极大的减少字体包的大小 */
+        @font-face {
+            font-family: "阿里妈妈东方大楷";
+            font-weight: 400;
+            src: url("//at.alicdn.com/wf/webfont/dceOirLaXOIe/QEIMz8SNdM5T.woff2") format("woff2"),
+                url("//at.alicdn.com/wf/webfont/dceOirLaXOIe/BV730udly4Jt.woff") format("woff");
+            font-display: swap;
+        }
+
+        .box3 {
+            font-size: 100px;
+            font-family: '阿里妈妈东方大楷';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">衣带渐宽终不悔，为伊消得人憔悴</div>
+    <hr>
+    <div class="box2">春风得意马蹄疾，不信人间有别离</div>
+    <hr>
+    <div class="box3">衣带渐宽终不悔，为伊消得人憔悴</div>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3笔记——字体图标</title>
+    <link rel="stylesheet" href="./font3/iconfont.css">
+    <script src="./font3/iconfont.js"></script>
+    <style>
+        /* 使用字体图标的好处：防止放大后图标失真 */
+        /* 第一种使用方式 */
+        /* 第一步 */
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./font3/iconfont.woff2?t=1676857973138') format('woff2'),
+                url('./font3/iconfont.woff?t=1676857973138') format('woff'),
+                url('./font3/iconfont.ttf?t=1676857973138') format('truetype');
+        }
+
+        /* 第二步 */
+        .iconfont1 {
+            font-family: "iconfont" !important;
+            font-size: 80px;
+            font-style: normal;
+            /* 抗锯齿 */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 第二种使用方式 */
+        /* 引用本地css样式表 */
+        .iconfont {
+            font-size: 80px;
+        }
+
+        /* 第三种方式 */
+        /* 引用本地js */
+        svg {
+            width: 85px;
+        }
+
+        /* 第四种 */
+        /* 在线使用方案一 */
+        @font-face {
+            font-family: 'iconfont2';
+            /* Project id 3904680 */
+            src: url('//at.alicdn.com/t/c/font_3904680_cctp97jw61q.woff2?t=1676858967519') format('woff2'),
+                url('//at.alicdn.com/t/c/font_3904680_cctp97jw61q.woff?t=1676858967519') format('woff'),
+                url('//at.alicdn.com/t/c/font_3904680_cctp97jw61q.ttf?t=1676858967519') format('truetype');
+        }
+
+        .iconfont2 {
+            font-family: "iconfont2" !important;
+            font-size: 80px;
+        }
+
+        /* 第五种 */
+        /* 在线使用方案二 */
+        /* <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3904680_cctp97jw61q.css"> */
+
+        /* 第六种 */
+        /* 在线使用方案三 */
+        /* <script src="//at.alicdn.com/t/c/font_3904680_cctp97jw61q.js"></script> */
+    </style>
+</head>
+
+<body>
+    <i class="iconfont1">&#xe85c;</i>
+    <i class="iconfont1">&#xe85d;</i>
+    <i class="iconfont1">&#xe85e;</i>
+    <i class="iconfont1">&#xe85f;</i>
+    <!-- 在线使用方案一 -->
+    <i class="iconfont2">&#xe85c;</i>
+    <i class="iconfont2">&#xe85d;</i>
+    <i class="iconfont2">&#xe85e;</i>
+    <i class="iconfont2">&#xe85f;</i>
+    <hr>
+    <i class="iconfont icon-chengzi"></i>
+    <i class="iconfont icon-bingqilin"></i>
+    <i class="iconfont icon-hanbao"></i>
+    <i class="iconfont icon-kafeibei"></i>
+    <hr>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-chengzi"></use>
+    </svg>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-bingqilin"></use>
+    </svg>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-hanbao"></use>
+    </svg>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-kafeibei"></use>
+    </svg>
+</body>
+
+</html>
