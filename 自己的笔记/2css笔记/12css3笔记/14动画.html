@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3笔记——动画</title>
+    <style>
+        .container {
+            width: 1500px;
+            height: 200px;
+            border: 1px black solid;
+            margin: 10px 0;
+        }
+
+        .container2 {
+            width: 230px;
+            height: 230px;
+            border: 1px black solid;
+            margin: 10px auto;
+        }
+
+        /* 动画1 */
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+            /* 给元素添加动画 */
+            animation-name: goright;
+            /* 设置动画持续的时间 */
+            animation-duration: 3s;
+            /* 设置动画延迟播放时间 */
+            animation-delay: 500ms;
+        }
+
+        /* 定义关键帧 */
+        @keyframes goright {
+
+            /* 第一帧 */
+            from {}
+
+            /* 最后一帧 */
+            to {
+                transform: translate(1300px);
+                background-color: aqua;
+            }
+        }
+
+        /* 动画2 */
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+
+            /* 1.给元素添加动画 */
+            animation-name: goright2;
+
+            /* 2.设置动画持续的时间 */
+            animation-duration: 3s;
+
+            /* 3.设置动画延迟播放时间 */
+            animation-delay: 500ms;
+
+            /* 4.设置动画播放方式 */
+            animation-timing-function: ease-in;
+
+            /* 5.设置动画播放次数 */
+            /* 默认值 */
+            animation-iteration-count: 1;
+            /* animation-iteration-count: infinite; */
+
+            /* 6.设置动画方向 */
+            /* 交替播放 */
+            /* animation-direction: alternate; */
+            /* 反向播放 */
+            /* animation-direction: reverse; */
+            /* 默认值 */
+            animation-direction: normal;
+
+            /* 7.最终状态 */
+            /* animation-fill-mode: backwards; */
+            animation-fill-mode: forwards;
+
+            /* 8.设置动画播放状态 */
+            animation-play-state: running
+        }
+
+        /* 复合写法 */
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            /* 只有时间有先后顺序,其他的随便写 */
+            animation: goright2 3s 500ms ease-in-out infinite normal forwards;
+        }
+
+        /* 暂停一般写在某种状态下 */
+        .box3:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes goright2 {
+
+            /* 第一帧 */
+            0% {}
+
+            20% {
+                background-color: antiquewhite;
+            }
+
+            50% {
+                background-color: blue;
+            }
+
+            70% {
+                background-color: blueviolet;
+            }
+
+            /* 最后一帧 */
+            100% {
+                transform: translate(1300px) rotate(1440deg);
+                background-color: aqua;
+                border-radius: 100px;
+            }
+        }
+
+        /* 动画示例 */
+        .box4 {
+            height: 230px;
+            width: 230px;
+            background-image: url(../../../代码/4_CSS3/images/bike.png);
+            animation: bike 1s 500ms steps(31) infinite;
+            background-size: cover;
+            /* 这里每一帧图片大小本来为130px,但我将其容器改为230px,
+            因此最后设置动画时也应该将最终位置改为的230/130✖4030 
+            即7143(经过微调)*/
+        }
+
+        @keyframes bike {
+            0% {}
+
+            100% {
+                background-position: 0px -7143px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1"></div>
+    </div>
+    <div class="container">
+        <div class="box2"></div>
+    </div>
+    <div class="container">
+        <div class="box3"></div>
+    </div>
+    <h2 style="text-align: center;">动画应用示例</h2>
+    <div class="container2">
+        <div class="box4"></div>
+    </div>
+</body>
+
+</html>

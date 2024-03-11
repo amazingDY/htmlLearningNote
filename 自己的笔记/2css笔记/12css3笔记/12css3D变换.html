@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3笔记——3D变换</title>]
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+            border: 1px black solid;
+            margin: 0 auto;
+            margin-top: 50px;
+            /* 开启3D空间,默认为flat */
+            transform-style: preserve-3d;
+            /* 设置景深,默认为none,不是0 */
+            perspective: 200px;
+            /* 调整透视点的位置,默认就在父元素正中间 */
+            perspective-origin: 100px 100px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+
+        /* 位移变化 */
+        .box1:hover {
+            /* 延Z轴变化 */
+            /* transform: translateZ(30px); */
+            /* 延三个方向变化 */
+            /* 注意,Z轴长度不能写百分比 */
+            transform: translate3d(50px, 50px, 50px);
+        }
+
+        /* 旋转变化 */
+        .box2:hover {
+            /* 延X轴旋转 从上看是顺时针*/
+            /* transform: rotateX(20deg); */
+            /* 延Y轴旋转 从下看是顺时针*/
+            /* transform: rotateY(30deg); */
+            /* 混合写法,前三个值代表坐标轴,最后一个值代表旋转角度 */
+            transform: rotate3d(1, 0, 1, 30deg);
+        }
+
+        /* 缩放变化 */
+        .box3:hover {
+            /* Z轴缩放影响景深，几乎不用 */
+            transform: scaleZ(1.5);
+            transform: scale3d(1.5, 1.5, 2) rotateY(30deg);
+        }
+
+        /* 多重变化 */
+        .box4:hover {
+            transform: translateY(-100px) scaleZ(3) rotateY(40deg);
+        }
+
+        /* 背部可见性 */
+        .box5 {
+            /* 隐藏 */
+            /* backface-visibility: hidden; */
+            /* 显示镜像画面，默认值 */
+            backface-visibility: visible;
+            transform: rotateY(100deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1">1</div>
+    </div>
+    <div class="container">
+        <div class="box box2">2</div>
+    </div>
+    <div class="container">
+        <div class="box box3">3</div>
+    </div>
+    <div class="container">
+        <div class="box box4">4</div>
+    </div>
+    <div class="container">
+        <div class="box box5">5</div>
+    </div>
+</body>
+
+</html>

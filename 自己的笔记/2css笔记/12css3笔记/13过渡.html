@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3笔记——过渡</title>
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+            border: 1px black solid;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        .container2 {
+            width: 1000px;
+            height: 900px;
+            border: 1px black solid;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+            transition-property: all;
+            transition-duration: 500ms;
+        }
+
+        .boxx {
+            width: 200px;
+            height: 100px;
+            font-size: 30px;
+            background-color: antiquewhite;
+            transition-property: all;
+            transition-duration: 1000ms;
+        }
+
+        /* 1.基础属性 */
+        .box1 {
+            /* 设置需要过渡的属性 */
+            /*  1. none ：不过渡任何属性。
+                2. all ：过渡所有能过渡的属性。
+                3. 具体某个属性名 ，例如： width 、 heigth ，若有多个以逗号分隔。
+                
+            不是所有的属性都能过渡，值为数字，或者值能转为数字的属性，都支持过渡，否则不支持过渡。
+            常见的支持过渡的属性有：颜色、长度值、百分比、 z-index 、 opacity 、 2D 变换属性、 3D 变换属性、阴影。 */
+            transition-property: all;
+            /* 设置过渡的时间 */
+            transition-duration: 500ms;
+            /* 设置过渡开始的延迟时间 */
+            transition-delay: 200ms;
+        }
+
+        /* 2.设置过渡类型 */
+        /*  1. ease ： 平滑过渡 —— 默认值
+            2. linear ： 线性过渡
+            3. ease-in ： 慢 → 快
+            4. ease-out ： 快 → 慢
+            5. ease-in-out ： 慢 → 快 → 慢
+            6. step-start ： 等同于 steps(1, start)
+            7. step-end ： 等同于 steps(1, end)
+            8. steps( integer,?) ： 接受两个参数的步进函数。第一个参数必须为正整数，指定函数的
+            步数。第二个参数取值可以是 start 或 end ，指定每一步的值发生变化的时间点。第二个
+            参数默认值为 end 。
+            9. cubic-bezie ( number, number, number, number)： 特定的贝塞尔曲线类型。 */
+        .box2 {
+            background-color: antiquewhite;
+            transition-timing-function: ease;
+        }
+
+        .box3 {
+            background-color: aqua;
+            transition-timing-function: linear;
+        }
+
+        .box4 {
+            background-color: crimson;
+            transition-timing-function: ease-in;
+        }
+
+        .box5 {
+            background-color: aquamarine;
+            transition-timing-function: ease-out;
+        }
+
+        .box6 {
+            background-color: blue;
+            transition-timing-function: ease-in-out;
+        }
+
+        .box7 {
+            background-color: blueviolet;
+            transition-timing-function: step-start;
+        }
+
+        .box8 {
+            background-color: brown;
+            transition-timing-function: step-end;
+        }
+
+        .box9 {
+            background-color: chocolate;
+            transition-timing-function: steps(5, end);
+        }
+
+        .box10 {
+            background-color: brown;
+            transition-timing-function: cubic-bezier(.14, .99, .84, -0.01);
+        }
+
+        .box1:hover {
+            transform: translateX(100px);
+        }
+
+        .container2:hover .boxx {
+            width: 1000px;
+        }
+
+        /* 3.复合属性 */
+        .container3 {
+            width: 1000px;
+            height: 200px;
+            border: 1px black solid;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        .box11 {
+            /* 复合写法 第一个时间表示duration，第二个时间表示delay*/
+            /* 除了时间有顺序要求，其他属性顺序随便写 */
+            transition: 2000ms 200ms ease all;
+        }
+
+        .container3:hover .box11 {
+            width: 1000px;
+        }
+
+        /* 4.过渡案例 */
+        .container4 {
+            width: 300px;
+            height: 550px;
+            position: relative;
+        }
+
+        .mask {
+            width: 300px;
+            height: 550px;
+            background-color: black;
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 550px;
+            font-size: 100px;
+            opacity: 0;
+            transition: 0.5s linear;
+            cursor: pointer;
+        }
+
+        img {
+            transition: 0.5s linear;
+        }
+
+        .container4:hover .mask {
+            opacity: 0.3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1"></div>
+    </div>
+    <hr>
+    <h2>过渡效果</h2>
+    <div class="container2">
+        <div class="boxx box2">ease</div>
+        <div class="boxx box3">linear</div>
+        <div class="boxx box4">ease-in</div>
+        <div class="boxx box5">ease-out</div>
+        <div class="boxx box6">ease-in-out</div>
+        <div class="boxx box7">step-start</div>
+        <div class="boxx box8">step-end</div>
+        <div class="boxx box9">steps</div>
+        <div class="boxx box10">cubic-bezie</div>
+    </div>
+    <h2>综合属性</h2>
+    <div class="container3">
+        <div class="box box11"></div>
+    </div>
+    <h2>案例</h2>
+    <div class="container4">
+        <img src="../../data/谭松韵4.png" alt="" width="300px">
+        <div class="mask">谭松韵</div>
+    </div>
+</body>
+
+</html>

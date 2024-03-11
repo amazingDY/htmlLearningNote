@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3笔记——2D变换</title>
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+            border: 1px black solid;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+
+        /* 1.位移变换 */
+        .box1:hover {
+            /* 往右 */
+            transform: translateX(50px);
+            /* 往左 */
+            /* transform: translateX(-50px); */
+            /* 往上 */
+            /* transform: translateY(-50px); */
+            /* 往下 */
+            /* transform: translateY(50px); */
+            /* 复合写法 */
+            /* transform: translateX(50px) translateY(50px); */
+            /* transform: translate(50px, 50px); */
+        }
+
+        /* 2.缩放变化 */
+        .box2:hover {
+            /* 水平缩放 */
+            /* transform: scaleX(1.5); */
+            /* 垂直缩放 */
+            /* transform: scaleY(1.5); */
+            /* 同时缩放 */
+            transform: scale(1.5);
+            /* transform: scale(1.5, 2); */
+        }
+
+        /* 3.旋转变化 */
+        /* 旋转中心在元素正中央 */
+        .box3:hover {
+            /* 延X轴旋转 */
+            /* transform: rotateX(30deg); */
+            /* 延Y轴旋转 */
+            /* transform: rotateY(30deg); */
+            /* 相当于延z轴旋转 */
+            transform: rotate(30deg);
+        }
+
+        /* 4.扭曲 */
+        .box4:hover {
+            /* 延X轴被拉伸 */
+            /* transform: skewX(45deg); */
+            /* 延Y轴被拉伸 */
+            /* transform: skewY(45deg); */
+            /* 一个值代表X,两个值代表XY */
+            transform: skew(20deg, 20deg);
+        }
+
+        /* 5.多重变化 */
+        .box5:hover {
+            transform: translateX(50px) scale(1.5) skewX(10deg) rotate(45deg);
+        }
+
+        /* 6.变换原点 */
+        /*  1. transform-origin: 50% 50% ， 变换原点在元素的中心位置，百分比是相对于自身。—— 默认值
+            2. transform-origin: left top ，变换原点在元素的左上角 。
+            3. transform-origin: 50px 50px ， 变换原点距离元素左上角 50px 50px 的位置。
+            4. transform-origin: 0 ，只写一个值的时候，第二个值默认为 50% 。 */
+        .box6:hover {
+            transform-origin: left top;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1">hello world!</div>
+    </div>
+    <div class="container">
+        <div class="box box2">hello world</div>
+    </div>
+    <div class="container">
+        <div class="box box3">hello world</div>
+    </div>
+    <div class="container">
+        <div class="box box4">hello world</div>
+    </div>
+    <div class="container">
+        <div class="box box5">hello world</div>
+    </div>
+    <div class="container">
+        <div class="box box6">hello world</div>
+    </div>
+</body>
+
+</html>
