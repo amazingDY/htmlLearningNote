@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3笔记——响应式布局</title>
+    <style>
+        h1 {
+            width: 200px;
+            height: 200px;
+            font-size: 80px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.5);
+            margin: 50px auto;
+            /* background-image: linear-gradient(to right top, red, blue); */
+            line-height: 200px;
+            text-align: center;
+            background-clip: text;
+        }
+
+        @font-face {
+            font-family: "阿里妈妈东方大楷";
+            font-weight: 400;
+            src: url("//at.alicdn.com/wf/webfont/dceOirLaXOIe/QEIMz8SNdM5T.woff2") format("woff2"),
+                url("//at.alicdn.com/wf/webfont/dceOirLaXOIe/BV730udly4Jt.woff") format("woff");
+            font-display: swap;
+        }
+
+        /* 媒体查询,屏幕 */
+        @media screen {
+            h1 {
+                font-family: "阿里妈妈东方大楷";
+                border: 1px black solid;
+            }
+        }
+
+        /* 媒体查询,打印机 */
+        @media print {
+            h1 {
+                border: 2px black solid;
+            }
+        }
+
+        /* 媒体查询,媒体特性 */
+        /* width 检测视口宽度。
+        max-width 检测视口最大宽度。
+        min-width 检测视口最小宽度。
+        height 检测视口高度。
+        max-height 检测视口最大高度。
+        min-height 检测视口最小高度。
+        device-width 检测设备屏幕的宽度。
+        max-device-width 检测设备屏幕的最大宽度。
+        min-device-width 检测设备屏幕的最小宽度。
+        orientation
+        检测视口的旋转方向（是否横屏）。
+        1. portrait ：视口处于纵向，即高度大于等于宽度。
+        2. landscape ：视口处于横向，即宽度大于高度。 */
+        /* 视口宽度小于900时 */
+        @media (max-width:900px) {
+            h1 {
+                background-image: linear-gradient(to right top, red, blue);
+            }
+        }
+
+        /* 视口宽度大于900时 */
+        @media (min-width:900px) {
+            h1 {
+                color: black;
+            }
+        }
+
+        /* 还可以结合外部样式使用 */
+        /* <link rel="stylesheet" media="具体的媒体查询" href="mystylesheet.css"> */
+
+        /* and 并且
+        , 或 or 或
+        not 否定
+        only 肯定 用于解决IE的兼容性问题 */
+    </style>
+</head>
+
+<body>
+    <h1>不悔</h1>
+</body>
+
+</html>

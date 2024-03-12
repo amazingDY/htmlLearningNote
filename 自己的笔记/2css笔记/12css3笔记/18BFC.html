@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3笔记——BFC</title>
+    <style>
+        /* 更加通俗的描述：
+        1. BFC 是 Block Formatting Context （块级格式上下文），可以理解成元素的一个“特异功能”。
+        2. 该 “特异功能”，在默认的情况下处于关闭状态；当元素满足了某些条件后，该“特异功能”被激活。
+        3. 所谓激活“特异功能”，专业点说就是：该元素创建了 BFC （又称：开启了 BFC ）。
+        2. 开启了BFC能解决什么问题
+        1. 元素开启 BFC 后，其子元素不会再产生 margin 塌陷问题。
+        2. 元素开启 BFC 后，自己不会被其他浮动元素所覆盖。
+        3. 元素开启 BFC 后，就算其子元素浮动，元素自身高度也不会塌陷。
+        3. 如何开启BFC
+            (1).根元素
+            (2).浮动元素
+            (3).绝对定位、固定定位的元素
+            (4).行内块元素
+            (5).表格单元格： table 、 thead 、 tbody 、 tfoot 、 th 、 td 、 tr 、 caption
+            (6).overflow 的值不为 visible 的块元素
+            (7).伸缩项目
+            (8).多列容器
+            (9).column-span 为 all 的元素（即使该元素没有包裹在多列容器中）
+            (10).display 的值，设置为 flow-root */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* body {
+            display: flex;
+        } */
+
+        /* 演示一 margin塌陷问题*/
+        .outer {
+            width: 400px;
+            background-color: #888;
+            /* float: left; */
+            /* position: absolute; */
+            /* display: inline-block; */
+            /* display: table; */
+            /* overflow: auto; */
+            /* column-count: 1; */
+            /* display: flow-root; */
+        }
+
+        .inner {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+
+        .inner1 {
+            background-color: orange;
+        }
+
+        .inner2 {
+            background-color: green;
+        }
+
+        .inner3 {
+            background-color: deepskyblue;
+        }
+
+        /* 演示二 浮动造成的覆盖问题*/
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            background-color: orange;
+            float: left;
+        }
+
+        .box2 {
+            background-color: green;
+            /* float: left; */
+            /* position: absolute; */
+            /* display: inline-block; */
+            /* display: table; */
+            /* overflow: auto; */
+            /* column-count: 1; */
+            /* display: flow-root; */
+        }
+
+        /* 演示三 浮动元素的父亲的高度问题*/
+        .outer1 {
+            width: 400px;
+            background-color: #888;
+            /* float: left; */
+            /* position: absolute; */
+            /* display: inline-block; */
+            /* display: table; */
+            /* overflow: auto; */
+            /* column-count: 1; */
+            display: flow-root;
+        }
+
+        .inner0 {
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+
+        .inner4 {
+            background-color: orange;
+        }
+
+        .inner5 {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner inner1"></div>
+        <div class="inner inner2"></div>
+        <div class="inner inner3"></div>
+    </div>
+    <!-- <hr style="height: 50px; background-color: red;"> -->
+    <hr style="margin: 20px 0;">
+    <div>
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+    </div>
+    <hr style="margin: 20px 0;">
+    <div class="outer1">
+        <div class="inner0 inner4"></div>
+        <div class="inner0 inner5"></div>
+    </div>
+</body>
+
+</html>
