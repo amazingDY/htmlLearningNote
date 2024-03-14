@@ -1,0 +1,81 @@
+@mySelector: #wrap;
+@wrapname: wrap;
+
+// 1.选择器变量，平时开发的时候将变量写于文件顶端或单独写一个less文件
+@{mySelector} {
+    color: black;
+    width: 200px;
+    height: 200px;
+}
+
+.@{wrapname} {
+    color: black;
+    width: 200px;
+    height: 200px;
+}
+
+#@{wrapname} {
+    color: black;
+    width: 200px;
+    height: 200px;
+}
+
+// 2.属性变量
+@borderStyle: border-style;
+@solid: solid;
+
+#wrap {
+    @{borderStyle}: @solid;
+}
+
+// 3.url变量
+@img: "../data/imgs";
+
+body {
+    background-image: url("@imgs/bgimg.png");
+}
+
+// 4.声明变量
+@background: {
+    background-color: red;
+}
+
+@rules: {
+    width: 100px;
+    height: 200px;
+    border: 2px black solid
+}
+
+.box {
+    @background();
+    @rules();
+}
+
+// 5.变量的运算
+@width: 300px;
+@color: pink;
+
+// 减号两边留空格
+#box {
+    width: @width - 20;
+    height: @width + 20;
+    margin: (@width - 100)*0.5;
+    color: @color*2;
+}
+
+// 6.变量作用域,与css一样，后来者优先
+@var: @a;
+@a: 10%;
+
+#wrap {
+    @a: 12%;
+    width: @var;
+}
+
+// 7.用变量定义变量
+@color2: @backgroundcolor;
+@backgroundcolor: "rgb(100,0,0)";
+
+#box1 {
+    color: @color2;
+}

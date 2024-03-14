@@ -1,0 +1,44 @@
+//方法的继承
+.animation {
+    transform: translate(600px) 2s ease;
+
+    .scale {
+        transform: scale(180deg);
+    }
+}
+
+#animation2 {
+    &:extend(.animation);
+}
+
+#scale2 {
+    &:extend(.animation .scale);
+}
+
+// all全局搜索替换
+#box {
+    width: 200px;
+}
+
+#box {
+    &::after {
+        content: 'less shabi';
+    }
+}
+
+#container:extend(#box all) {
+    height: 200px;
+}
+
+// 减少代码重复性
+.fun() {
+    width: 200px;
+
+    &::after {
+        content: 'less good';
+    }
+}
+
+#box2 {
+    .fun;
+}

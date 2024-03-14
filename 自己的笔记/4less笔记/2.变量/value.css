@@ -1,0 +1,39 @@
+#wrap {
+  color: black;
+  width: 200px;
+  height: 200px;
+}
+.wrap {
+  color: black;
+  width: 200px;
+  height: 200px;
+}
+#wrap {
+  color: black;
+  width: 200px;
+  height: 200px;
+}
+#wrap {
+  border-style: solid;
+}
+body {
+  background-image: url("@imgs/bgimg.png");
+}
+.box {
+  background-color: red;
+  width: 100px;
+  height: 200px;
+  border: 2px black solid;
+}
+#box {
+  width: 280px;
+  height: 320px;
+  margin: 100px;
+  color: #ffffff;
+}
+#wrap {
+  width: 12%;
+}
+#box1 {
+  color: "rgb(100,0,0)";
+}

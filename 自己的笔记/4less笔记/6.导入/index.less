@@ -1,0 +1,8 @@
+// 正常导入
+// @import "main.less";
+// 导入但不解析
+// @import (reference) "footer.less";
+// 只解析一次，后面的会被忽略
+@import (once) "footer.less";
+// 重复导入，多次预解析
+@import (multiple) "main.less";

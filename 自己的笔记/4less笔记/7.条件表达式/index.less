@@ -1,0 +1,40 @@
+// 带条件的混合
+.min(@a) when(lightness(@a)>=50%) {
+    background-color: black;
+}
+
+.min(@a) when(lightness(@a)<50%) {
+    background-color: white;
+}
+
+.min(@a) {
+    color: @a;
+}
+
+.box1 {
+    .min(#333);
+}
+
+.box2 {
+    .min(#faf);
+}
+
+// 类型检测函数
+// iscolor isnumber isstring iskeyword isurl
+.fun1(@a: #fff; @b: 10) when(isnumber(@b)) {
+    color: @a;
+    font-size: @b;
+}
+
+.fun1(@a: 20; @b) when(iscolor(@b)) {
+    color: @b;
+    font-size: @a;
+}
+
+.box3 {
+    .fun1(#fff, 10);
+}
+
+.box4 {
+    .fun1(20, #fff);
+}

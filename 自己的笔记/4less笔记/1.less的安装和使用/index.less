@@ -1,0 +1,13 @@
+// 这种注释不会到CSS中，保存之后会自动生成一个同名的css文件
+/* 这种注释会出现在CSS中 */
+@color: blue;
+@bgColor: red;
+@width: 200px;
+@height: 200px;
+
+#wrap {
+    color: @color;
+    background-color: @bgColor;
+    width: @width;
+    height: @height;
+}

@@ -1,0 +1,7 @@
+/* 这种注释会出现在CSS中 */
+#wrap {
+  color: blue;
+  background-color: red;
+  width: 200px;
+  height: 200px;
+}

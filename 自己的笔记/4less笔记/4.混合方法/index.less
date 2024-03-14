@@ -1,0 +1,150 @@
+// 1.无参数方法,最好在方法后加个括号，不然会被当成类处理
+.card() {
+    background-color: yellow;
+    box-shadow: 3px 3px 5px gray;
+}
+
+#box1 {
+    .card();
+}
+
+// 2.默认参数方法
+.border(@a: 10px, @b: 10px, @c: 10px, @d: black) {
+    border: @a @d solid;
+    // arguments指代全部参数
+    box-shadow: @arguments;
+}
+
+#box2 {
+    .border();
+}
+
+// 3.方法的匹配模式（与面向对象的多态相似）
+// 函数的参数可以指定，也可以空着，直接使用默认值
+.fun(top, @width, @color: black) {
+    border-color: @color;
+}
+
+.fun(right, @width, @color: white) {
+    border-color: @color;
+}
+
+.fun(left, @width, @color: red) {
+    border-color: @color;
+}
+
+.fun(bottom, @width, @color: green) {
+    border-color: @color;
+}
+
+.fun(@_, @width, @color: black) {
+    border-width: @width;
+    border-style: solid;
+}
+
+#box3 {
+    .fun(left, 30px)
+}
+
+// 4.方法的命名空间
+.card2() {
+    background-color: red;
+
+    .w(@width: 200px) {
+        width: @width;
+
+        .h(@height: 200px) {
+            height: @height;
+        }
+    }
+}
+
+#box41 {
+    .card2.w.h(100px);
+}
+
+#box42 {
+    .card2.w(200px);
+}
+
+// 若要引用方法内的方法，必须在引用子类方法之前就先引用父类方法
+#box43 {
+    .card2;
+    .w(100px);
+    .h;
+}
+
+// 5.方法的条件筛选(ifelse)
+.card3() {
+
+    // when方法
+    .border(@w, @c, @s: solid) when(@w>100) and(@c>#111) {
+        border: @w @c @s;
+    }
+
+    // when not 方法
+    .background(@color) when not (@color>=#222) {
+        background-color: @color;
+    }
+
+    // 逗号分隔符方法
+    .font(@size: 20px) when (@size>50px),
+    (@size<100px) {
+        font-size: @size;
+    }
+}
+
+#box5 {
+    .card3.border(110px, #ffffff);
+    .card3.background(#333);
+    .card3.font(40px);
+}
+
+// 6.数量不定的参数
+.boxShadow(...) {
+    box-shadow: @arguments;
+}
+
+.textShadow(@a, ...) {
+    text-shadow: @arguments;
+}
+
+#box6 {
+    .boxShadow(3px, 3px, 10px, gray);
+    .textShadow(3px, 3px, 10px, gray);
+}
+
+// 7.方法使用  !important
+.border2() {
+    border: 1px red solid;
+    margin: 0 auto;
+}
+
+#box7 {
+    .border2() !important;
+}
+
+// 8.（模拟）循环方法
+// 条件判断
+.generate-columns(@n, @i: 1) when(@i<=@n) {
+    .column@{i} {
+        width: (100*@i);
+    }
+
+    // 递归调用
+    .generate-columns(@n, (@i+1))
+}
+
+// 调用方法
+.generate-columns(4);
+
+// 9.属性拼接方法
+// +之后带个_，就可以消除属性之间的逗号
+.boxShadow2() {
+    box-shadow+_: 0 0;
+}
+
+#box8 {
+    .boxShadow2();
+    box-shadow+_: 10px black;
+}

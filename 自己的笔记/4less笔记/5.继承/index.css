@@ -1,0 +1,25 @@
+.animation,
+#animation2 {
+  transform: translate(600px) 2s ease;
+}
+.animation .scale,
+#scale2 {
+  transform: scale(180deg);
+}
+#box,
+#container {
+  width: 200px;
+}
+#box::after,
+#container::after {
+  content: 'less shabi';
+}
+#container {
+  height: 200px;
+}
+#box2 {
+  width: 200px;
+}
+#box2::after {
+  content: 'less good';
+}
