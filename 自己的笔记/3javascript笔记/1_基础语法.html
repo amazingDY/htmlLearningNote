@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量</title>
+</head>
+
+<body>
+    <!-- 1.1这是内联js -->
+    <script>
+        /* 以下是使用 `let` 时的注意事项：
+        1. 允许声明和赋值同时进行
+        2. 不允许重复声明
+        3. 允许同时声明多个变量并赋值
+        4. JavaScript 中内置的一些关键字不能被当做变量名
+
+        以下是使用 `var` 时的注意事项：
+
+        2. 允许声明和赋值同时进行
+        3. 允许重复声明
+        4. 允许同时声明多个变量并赋值 */
+
+        // 2.1使用var关键字声明变量
+        var uesrName = "Tom"
+        var num = 10
+        // 2.2更推荐使用let声明变量
+        let gender = "男"
+
+        // 3.js输出方式
+        document.write("展示在页面上")
+        console.log("输出到控制台")
+        alert("这是弹窗")
+
+        // 4.js数据类型
+        // 原始数据类型：数值类型，字符串类型，布尔类型
+
+    </script>
+    <!-- 1.2这是外部js,在标签中写的js代码会被忽略 -->
+    <script src="./hello.js"></script>
+    <!-- 1.3这是引入网络上的js -->
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script> -->
+</body>
+
+</html>
