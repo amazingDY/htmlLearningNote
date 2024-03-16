@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组</title>
+</head>
+
+<body>
+    <script>
+        // 1.数组基础
+        // 数组定义,数据类型不限
+        let arr1 = ['Tom', 'Jack', 20, true, null]
+        let arr2 = []
+        arr2[0] = 'Tom'
+        console.log(arr2)
+        // 二维数组
+        let arr3 = ['data1', ['data2', 'data2'], ['data3', 'data3', 'data3']]
+        console.log(arr3)
+        console.log(arr3[1])
+        // length属性
+        console.log(arr3.length)//3
+
+        // 2.遍历数组
+        // 普通的for和while循环
+        // for in
+        for (var i in arr3) {
+            console.log(arr3[i])
+        }
+
+        let temp = 'amazingDY'
+        // 3.Array.isArray(),判断数据是否为数组
+        console.log(Array.isArray(arr1))//true
+        console.log(Array.isArray(temp))//false
+
+        // 4.push、pop
+        // push,向原数组后方添加元素，会改变原数组
+        arr1.push('DY', 18)
+        console.log(arr1)
+        // pop,删除数组的最后n条数据
+        arr1.pop(1)
+        console.log(arr1)
+
+        // 5.shift/unshift
+        // shift,删除数组的第一个元素并返回其值，利用循环可以用于清空数组
+        console.log(arr1.shift())
+        // unshift,在数组的第一个位置添加元素，并返回添加后数组的长度
+        console.log(arr1.unshift('tx', 'lh'))//7
+        console.log(arr1)//['tx', 'lh', 'Jack', 20, true, null, 'DY']
+
+        // 6.join方法，以指定参数为分隔符，将所有数组成员连接成一个字符串返回，默认用逗号分割
+        console.log(arr1.join(''))//txlhJack20trueDY
+        console.log(arr1.join('|'))//tx|lh|Jack|20|true||DY
+        console.log(arr1.join())//tx,lh,Jack,20,true,,DY
+        // null和undefined会被转化成空字符串
+        // 可以配合split方法进行数组和字符串的互相转化
+
+        // 7.concat,将多个数组合并成一个数组，不改变原数组
+        console.log(arr1.concat(arr2))//['tx', 'lh', 'Jack', 20, true, null, 'DY', 'Tom']
+        console.log(arr1.concat(10, 11, 'DYYY'))//['tx', 'lh', 'Jack', 20, true, null, 'DY', 10, 11, 'DYYY']
+        // 注：应用场景:上拉合并数据
+
+        // 8.reverse,颠倒数组元素的顺序,会改变原数组
+        console.log(arr3.reverse())//[Array(3), Array(2), 'data1']
+        let str1 = "amazingDY"
+        // 反转字符串
+        console.log(str1.split('').reverse().join(''))//YDgnizama
+
+        // 9.indexOf,查找数组中给定元素第一次出现的位置，没有则返回-1
+        console.log(arr1.indexOf('Jack'))//2
+        // 判断数组中是否含有某元素
+        if (arr1.indexOf('Jack') > -1) {
+            console.log("Jack在名单中")
+        } else {
+            console.log("Jack不在")
+        }
+        // 第二个参数表示开始搜索的位置
+        console.log(arr1.indexOf('Jack', 3))
+    </script>
+</body>
+
+</html>

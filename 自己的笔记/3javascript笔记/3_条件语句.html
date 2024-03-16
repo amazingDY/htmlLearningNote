@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件语句</title>
+</head>
+
+<body>
+    <script>
+        // 1.if语句
+        let score = +prompt('请输入成绩：')
+        if (score >= 90) {
+            alert('成绩优秀，宝贝，你是我的骄傲')
+        } else if (score >= 70) {
+            alert('成绩良好，宝贝，你要加油哦~~')
+        } else if (score >= 60) {
+            alert('成绩及格，宝贝，你很危险~')
+        } else {
+            alert('成绩不及格，宝贝，我不想和你说话，我只想用鞭子和你说话~')
+        }
+
+        // 2.switch语句
+        switch (2) {
+            case 1:
+                console.log('您选择的是1')
+                break  // 退出switch
+            case 2:
+                console.log('您选择的是2')
+                break  // 退出switch
+            case 3:
+                console.log('您选择的是3')
+                break  // 退出switch
+            default:
+                console.log('没有符合条件的')
+        }
+
+        // 3.三元运算符
+        console.log(5 < 3 ? '真的' : '假的')
+        let num = prompt('请您输入一个数字:')
+        //判断输出- 小于10才补0
+        // num = num < 10 ? 0 + num : num
+        num = num >= 10 ? num : 0 + num
+        alert(num)
+    </script>
+</body>
+
+</html>

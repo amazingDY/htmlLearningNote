@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串</title>
+</head>
+
+<body>
+    <script>
+        // 单双引号都一样，单双引号可以相互嵌套，但不能自己嵌套自己,除非在前边加上反斜杠
+        let str1 = 'Tom"程序员"'
+        let str2 = "Jack\"工程师\""
+        console.log(str1)
+        console.log(str2)
+        // 字符串只能单行定义，除非加上转义字符
+        let str3 = "第一行\
+        第二行\
+        第三行"
+        console.log(str3)
+
+        // 字符串方法
+        // 1.length,chartAt（找对应位置的字母）
+        let s1 = 'abdhficbld'
+        console.log(s1.length)
+        console.log(s1.charAt(4));//f
+        // 打印最后一位
+        console.log(s1.charAt(s1.length - 1))//d
+        // 负数或者超出长度，打印空字符串
+        console.log(s1.charAt(-1))
+
+        // 2.concat(连接两个字符串，返回一个新串,原串不发生变化)
+        // 若参数不是字符串，则会先将其转化为字符串然后连接
+        // 加号也可以连接字符串，但遇到数字会直接相加
+        let s2 = "hello"
+        let s3 = " world"
+        let s4 = " 你好世界"
+        console.log(s2.concat(s3, s4))
+        console.log(s2 + s3 + s4)
+
+        // 3.substring,截取字符串，返回结果左闭右开，[2,8)
+        let s5 = 'yoareshduba'
+        console.log(s5.substring(2, 8))//areshd
+        console.log(s5.substring(2))//areshduba
+        // 大数写在小数前会被自动交换位置
+        console.log(s5.substring(8, 2))//areshd
+        // 负数会被直接变为0
+        console.log(s5.substring(-2, 8))//yoareshd
+
+        // 4.substr，截取字符串,第二个参数代表字符串长度
+        console.log(s5.substr(0, 5))//yoare
+        // 倒着数
+        console.log(s5.substr(-5))//hduba
+        // 负数会被直接变为0
+        console.log(s5.substr(2, -5))//空串
+
+        // 5.indexOf,查找字符串,返回第一个出现该字符的位置
+        console.log(s5.indexOf('a'))//2
+        console.log(s5.indexOf('aresh'))//2
+        // 找不到返回-1
+        console.log(s5.indexOf('c'))//-1
+        // 第二个参数代表从该位置开始寻找
+        console.log(s5.indexOf('a', 3))//10
+
+        let s6 = ' hello world 你好 世界 '
+        // 6.trim,去除字符串两边端的空格，返回新串，不改变原串
+        console.log(s6.trim())
+        // 去除头部空格
+        console.log(s6.trimStart())
+        // 去除尾部空格
+        console.log(s6.trimEnd())
+
+        // 7.分割字符串
+        let s7 = 'abc|d|e'
+        console.log(s7.split('|'))//['abc', 'd', 'e']
+        console.log(s7.split(''))//['a', 'b', 'c', '|', 'd', '|', 'e']
+        console.log(s7.split())//['abc|d|e']
+        // 第二个参数代表数组最大长度
+        console.log(s7.split('|', 2))//['abc', 'd']
+    </script>
+</body>
+
+</html>

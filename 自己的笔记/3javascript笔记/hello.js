@@ -1,2 +1,2 @@
-var age = 20;
-console.log(age)
+var age1 = 20;
+console.log(age1)
