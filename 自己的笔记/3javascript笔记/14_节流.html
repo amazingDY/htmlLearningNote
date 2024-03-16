@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节流</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+        // function debounce(fn, delay) {
+        //     var timer = null
+        //     return function () {
+        //         if (timer) {
+        //             clearTimeout(timer)
+        //         }
+        //         timer = setTimeout(fn, delay)
+        //     }
+        // }
+        // window.onscroll = debounce(scrollHandle, 200)
+        // function scrollHandle() {
+        //     console.log(document.documentElement.scrollTop)
+        // }
+        // 上述的防抖方案有缺陷,比如用户一直按着滚动条拖动,则永远都不会输出数据
+        // 但我们想要的是每过一段时间之后就可以触发一次,类似于技能的冷却
+        // 则此时需要考虑节流方案
+        function throttle(fn, delay) {
+            var vaild = true
+            return function () {
+                if (!vaild) {
+                    return false
+                }
+                vaild = false
+                setTimeout(function () {
+                    fn()
+                    vaild = true
+                }, delay)
+            }
+        }
+        window.onscroll = throttle(scrollHandle, 500)
+        function scrollHandle() {
+            console.log(document.documentElement.scrollTop)
+        }
+
+        // 防抖和节流的使用场景
+        // 防抖:在进行页面适配时,需要根据最终的设置进行渲染dom,此时适用于防抖
+        // 节流:例如实时搜索就可以使用节流,每隔一段时间自动搜索一次
+    </script>
+</body>
+
+</html>

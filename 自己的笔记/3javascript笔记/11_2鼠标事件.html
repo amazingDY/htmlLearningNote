@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标事件</title>
+    <style>
+        button {
+            line-height: 50px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">单击</button>
+    <button id="btn2">双击</button>
+    <button id="btn3">鼠标按下</button>
+    <button id="btn4">鼠标抬起</button>
+    <button id="btn5">鼠标移动</button>
+    <button id="btn6">鼠标进入</button>
+    <button id="btn7">鼠标离开</button>
+    <button id="btn8">鼠标进入,子节点再次触发</button>
+    <button id="btn9">鼠标离开,父节点再次触发</button>
+    <button id="btn10">滚轮</button>
+
+    <script>
+        let btn1 = document.getElementById('btn1')
+        let btn2 = document.getElementById('btn2')
+        let btn3 = document.getElementById('btn3')
+        let btn4 = document.getElementById('btn4')
+        let btn5 = document.getElementById('btn5')
+        let btn6 = document.getElementById('btn6')
+        let btn7 = document.getElementById('btn7')
+        let btn8 = document.getElementById('btn8')
+        let btn9 = document.getElementById('btn9')
+        let btn10 = document.getElementById('btn10')
+
+        btn1.onclick = function () {
+            console.log('鼠标单击')
+        }
+        btn2.ondblclick = function () {
+            console.log('鼠标双击')
+        }
+        btn3.onmousedown = function () {
+            console.log('鼠标按下')
+        }
+        btn4.onmouseup = function () {
+            console.log('鼠标抬起')
+        }
+        btn5.onmousemove = function () {
+            console.log('鼠标移动')
+        }
+        btn6.onmouseenter = function () {
+            console.log('鼠标进入')
+        }
+        btn7.onmouseleave = function () {
+            console.log('鼠标离开')
+        }
+        btn8.onmouseover = function () {
+            console.log('鼠标进入,子节点再次触发')
+        }
+        btn9.onmouseout = function () {
+            console.log('鼠标离开,父节点再次触发')
+        }
+        btn10.onwheel = function () {
+            console.log('鼠标滚动')
+        }
+    </script>
+</body>
+
+</html>

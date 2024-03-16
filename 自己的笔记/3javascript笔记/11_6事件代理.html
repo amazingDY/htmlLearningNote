@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件代理</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>列表一</li>
+        <li>列表二</li>
+        <li>列表三</li>
+    </ul>
+    <p>这是p标签</p>
+
+    <script>
+        // 事件代理:将子元素的事件交由父元素处理
+        let list = document.getElementById('list')
+        list.addEventListener("click", function (e) {
+            if (e.target.tagName.toLowerCase() === 'li') {
+                console.log(e.target.innerHTML)
+            }
+        })
+    </script>
+</body>
+
+</html>

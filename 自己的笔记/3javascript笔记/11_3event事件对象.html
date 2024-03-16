@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event事件对象</title>
+    <style>
+        button {
+            line-height: 30px;
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">按钮一</button>
+    <button id="btn2">按钮二</button>
+    <button id="btn3">按钮三</button>
+
+    <script>
+        // 1.event对象属性
+        let btn1 = document.getElementById('btn1')
+        btn1.onclick = function (event) {
+            console.log(event)
+            // target:获取事件的对象
+            console.log(event.target)
+            event.target.innerHTML = "点击之后"
+            // type:返回当前事件类型
+            console.log(event.type)
+        }
+
+        // 2.event对象方法
+        // 2.1 preventDefault()
+        let btn2 = document.getElementById('btn2')
+        btn2.onclick = function (e) {
+            // 阻止浏览器的默认行为,比如跳转
+            e.preventDefault();
+            console.log("点击了链接,但跳转被拦截了")
+        }
+        // 2.2 stopPropagation()
+        let btn3 = document.getElementById('btn3')
+        btn3.onclick = function (e) {
+            // 阻止事件在dom中继续传播,防止触发其他节点的监听函数,
+            // 但不包括当前节点的其他事件监听函数
+            // 比如按钮在一个块中,加上此属性则按钮点击后不会触发块的事件
+            e.stopPropagation();
+            console.log("事件的传播被停止了")
+        }
+    </script>
+</body>
+
+</html>

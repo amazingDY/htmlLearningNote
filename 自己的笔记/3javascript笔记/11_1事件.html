@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件分类</title>
+    <style>
+        body {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1" onclick="clickHandle()">按钮1</button>
+    <button id="btn2">按钮2</button>
+    <button id="btn3">按钮3</button>
+
+    <script>
+        // 1.HTML事件
+        function clickHandle() {
+            console.log('点击了按钮1')
+        }
+
+        // 2.DOM0事件,优点:html和javascript分开;缺点:无法同时添加多个事件
+        let btn2 = document.getElementById('btn2')
+        btn2.onclick = function () {
+            alert('点击了按钮2')
+        }
+
+        // 3.DOM2级事件,优点:事件不会被覆盖;缺点:写起来麻烦
+        let btn3 = document.getElementById('btn3')
+        btn3.addEventListener("click", function () {
+            alert('点击了按钮3')
+        })
+    </script>
+</body>
+
+</html>

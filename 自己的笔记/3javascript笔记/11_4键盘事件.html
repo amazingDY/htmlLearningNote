@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘事件</title>
+    <style>
+        .text {
+            width: 300px;
+            height: 300px;
+            border: 2px black solid;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea class="text" id="text1"></textarea>
+    <textarea class="text" id="text2"></textarea>
+    <textarea class="text" id="text3"></textarea>
+    <textarea class="text" id="text4"></textarea>
+
+    <script>
+        // keydown:按下触发,keypress:按下有值的键触发,keyup:抬起触发
+        let dom1 = document.getElementById('text1')
+        dom1.onkeydown = function (e) {
+            // 输出输入之前的值
+            console.log(e.target.value)
+        }
+
+        let dom2 = document.getElementById('text2')
+        dom2.onkeyup = function (e) {
+            // 输出输入之后的值
+            console.log(e.target.value)
+        }
+
+        let dom3 = document.getElementById('text3')
+        dom3.onkeypress = function (e) {
+            // 输出输入之前的值,但无值的键无法触发,例如ctrl,shift
+            console.log(e.target.value)
+        }
+
+        // backspace 8,回车 13,shift 16,ctrl 17,alt 18,
+        let dom4 = document.getElementById('text4')
+        dom4.onkeyup = function (e) {
+            // e.keyCode,输出按下键盘的唯一标识
+            console.log(e.keyCode)
+        }
+    </script>
+</body>
+
+</html>

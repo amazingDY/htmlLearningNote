@@ -8,7 +8,70 @@
 </head>
 
 <body>
+    <script>
+        //创建一个对象
+        let Tom = {
+            name: 'Tom',
+            age: 12,
+            gender: '男',
+            class: ['高数', 'c语言', '操作系统'],
+            getName: function () {
+                return this.name
+            }
+        }
+        console.log(Tom.name)
+        console.log(Tom.class[1])
+        console.log(Tom.getName())
 
+        //1.math对象
+
+        //1.1Math.abs(),取绝对值
+        let num = -100
+        console.log(Math.abs(num))//100
+
+        //1.2Math.max(),获取最大值
+        console.log(Math.max(10, 20, 30, 100))//100
+        console.log(Math.min(10, 20, 30, 100))//10
+
+        //1.3Math.floor/ceil,向上/下取整
+        let num2 = 5.7
+        console.log(Math.floor(num2))//5
+        console.log(Math.ceil(num2))//6
+
+        //1.4Math.random(),返回[0,1)的随机数
+        console.log(Math.random())
+        // (最大值-最小值0) * 随机数 = 0——最小值之间的随机数
+        // (最大值-最小值0) * 随机数 + 最小值 = 最小值到最大值之间的随机数
+        function getRandomNum(min, max) {
+            return Math.random() * (max - min) + min
+        }
+        console.log(Math.floor(getRandomNum(10, 50)))
+
+        //2.Date对象
+        console.log(Date.now())
+        console.log(Date(1710572831323))//Sat Mar 16 2024 15:08:56 GMT+0800 (中国标准时间)
+        //使用方法
+        //距离1970年1月1日00:00:00的毫秒数
+        console.log(new Date(Date.now()).getTime())
+        //距离1970年的年数
+        console.log(new Date(Date.now()).getYear())
+        //四位数年份2024
+        console.log(new Date(Date.now()).getFullYear())
+        //月份，0-11，表示1-12月
+        console.log(new Date(Date.now()).getMonth() + 1)
+        //返回星期
+        console.log(new Date(Date.now()).getDay())
+        //返回日期
+        console.log(new Date(Date.now()).getDate())
+        //几点
+        console.log(new Date(Date.now()).getHours())
+        //几分
+        console.log(new Date(Date.now()).getMinutes())
+        //几秒
+        console.log(new Date(Date.now()).getSeconds())
+        //毫秒
+        console.log(new Date(Date.now()).getMilliseconds())
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css操作</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">这是文字</div>
+
+    <script>
+        let box = document.getElementById('box1')
+        // 设置其属性
+        // 1.setAttribute,设置其属性并赋值
+        // box.setAttribute("style", "line-height:200px;font-size:20px;color:pink;")
+        // 2.style属性
+        // box.style.lineHeight = "200px"
+        // box.style.fontSize = "20px"
+        // box.style.color = "pink"
+        // 3.style属性的cssText,将其按字符串处理
+        box.style.cssText = "line-height:200px;font-size:20px;color:pink;"
+    </script>
+</body>
+
+</html>

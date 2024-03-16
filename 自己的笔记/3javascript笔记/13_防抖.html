@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        // 防抖用于网页性能优化,处理不当或者不处理会导致卡死
+        // 浏览器滚动事件,执行频率过高
+        // window.onscroll = function () {
+        //     console.log(document.documentElement.scrollTop)
+        // }
+
+        // 解决方案,设置一个执行时间,如200ms,检测在200ms中是否被再次触发,若再次触发则取消定时器
+        function debounce(fn, delay) {
+            var timer = null
+            return function () {
+                if (timer) {
+                    clearTimeout(timer)
+                }
+                timer = setTimeout(fn, delay)
+            }
+        }
+        window.onscroll = debounce(scrollHandle, 200)
+        function scrollHandle() {
+            console.log(document.documentElement.scrollTop)
+        }
+    </script>
+</body>
+
+</html>

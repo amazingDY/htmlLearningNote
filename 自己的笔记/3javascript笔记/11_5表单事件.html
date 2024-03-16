@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单事件</title>
+</head>
+
+<body>
+    <!-- action:服务器地址 -->
+    <form action="" id="myform">
+        <input type="text" id="input1" placeholder="请输入学号">
+        <br>
+        <input type="password" id="input2" placeholder="请输入密码">
+        <br>
+        <select name="city" id="select1">
+            <option name="city" value="一">选项一</option>
+            <option name="city" value="二">选项二</option>
+            <option name="city" value="三">选项三</option>s
+        </select>
+        <br>
+        <input type="checkbox" name="gender" value="男">男
+        <input type="checkbox" name="gender" value="女">女
+        <br>
+        <textarea name="other" id="text1" cols="23" rows="5"></textarea>
+        <br>
+        <button id="btn2">重置</button>
+        <button id="btn1">提交</button>
+    </form>
+
+    <script>
+        // input,select Change,reset,submit
+        // 1.input:在输入框中输入内容时触发,包括删除字符,按一次输出一次
+        let input1 = document.getElementById('input1')
+        input1.oninput = function (e) {
+            console.log(e.target.value)
+        }
+        let select1 = document.getElementById('select1')
+        select1.oninput = function (e) {
+            console.log(e.target.value)
+        }
+
+        // 2.select:在input,extarea中选中内容时触发事件
+        let input2 = document.getElementById('input2')
+        input2.onselect = function (e) {
+            // 返回的是输入框中的所有值,而非选中值
+            console.log(e.target.value)
+        }
+
+        // 3.change:input,select,textarea的值发生变化时触发,完成输入后或者失去焦点才会触发
+        let area = document.getElementById('text1')
+        area.onchange = function (e) {
+            console.log(e.target.value)
+        }
+
+        // 4.reset和submit,作用于form标签
+        let btn2 = document.getElementById('btn2')
+        let myform = document.getElementById('myform')
+        btn2.onclick = function () {
+            // 清空表单
+            myform.reset()
+        }
+        myform.onsubmit = function () {
+            console.log('表单提交成功')
+        }
+    </script>
+</body>
+
+</html>
